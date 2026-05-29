@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>iOS Developer Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b0f1a, #05060a);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00f5ff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 10px;
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00f5ff, #a855f7);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00f5ff;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(168,85,247,0.3);
+}
+
+/* VIDEO */
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(0,255,255,0.1);
+    border: 1px solid rgba(0,255,255,0.3);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Your Name</h1>
+    <p>iOS Developer • Swift • SwiftUI • UIKit</p>
+    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        View Projects
+    </button>
+</div>
+
+<!-- ABOUT -->
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        I am an iOS Developer passionate about building smooth, modern, and high-performance mobile applications using Swift and SwiftUI.
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Weather App</h3>
+        <p>Real-time weather app using API integration.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    </div>
+
+    <div class="card">
+        <h3>Finance Tracker</h3>
+        <p>Track expenses with clean SwiftUI design.</p>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section>
+    <h2>Skills</h2>
+    <div class="card skills">
+        <span>Swift</span>
+        <span>SwiftUI</span>
+        <span>UIKit</span>
+        <span>CoreData</span>
+        <span>Firebase</span>
+        <span>REST APIs</span>
+        <span>Combine</span>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: yourmail@example.com</p>
+        <p>GitHub: github.com/yourname</p>
+        <p>LinkedIn: linkedin.com/in/yourname</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Name — Built with Swift vibes ⚡
+</footer>
+
+</body>
+</html>
