@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>iOS Developer Portfolio</title>
+<title>iOS Engineer Portfolio</title>
 
 <style>
 * {
@@ -38,15 +38,15 @@ body {
 }
 
 .hero p {
-    margin-top: 10px;
+    margin-top: 15px;
     opacity: 0.9;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     max-width: 900px;
     line-height: 1.6;
 }
 
 .btn {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 12px 25px;
     border: none;
     border-radius: 30px;
@@ -70,11 +70,11 @@ section {
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #00f5ff;
 }
 
-/* CARDS */
+/* CARD */
 .card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -82,13 +82,19 @@ h2 {
     padding: 20px;
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    box-shadow: 0 0 20px rgba(0,255,255,0.08);
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(168,85,247,0.3);
+    box-shadow: 0 0 40px rgba(168,85,247,0.25);
+}
+
+.card img {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 10px;
 }
 
 /* SKILLS */
@@ -101,7 +107,12 @@ h2 {
     border: 1px solid rgba(0,255,255,0.3);
 }
 
-/* FOOTER */
+/* LINKS */
+a {
+    color: #00f5ff;
+    text-decoration: none;
+}
+
 footer {
     text-align: center;
     padding: 40px;
@@ -114,10 +125,10 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>AI-Powered iOS Developer</h1>
+    <h1>AI-Powered iOS Engineer</h1>
     <p>
-        5+ Years Experience • Scalable Architecture • Web3 & Fintech Systems • AI-Enhanced Engineering<br><br>
-        I build high-performance iOS applications with full technical ownership—from system design to production scaling.
+        5+ Years Experience • Scalable Architecture • Web3, Fintech & Logistics Systems • AI-Augmented Development<br><br>
+        I build high-performance iOS applications with full ownership — from architecture design to production scaling.
     </p>
 
     <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
@@ -130,82 +141,20 @@ footer {
     <h2>About Me</h2>
     <div class="card">
         I am an iOS Software Engineer with 5+ years of experience building secure, scalable mobile applications.
-        I specialize in designing modular architectures (TCA, MVVM-C), optimizing performance, and delivering production-grade fintech, Web3, and logistics apps.
+        I specialize in system design, modular architectures (TCA, MVVM-C), performance optimization, and production-grade mobile systems.
 
         <br><br>
 
-        I also actively use AI tools (Cursor, ChatGPT, Claude, Codex) to accelerate development workflows and explore agentic engineering patterns.
+        I also actively use AI tools like Cursor, ChatGPT, Claude, and Codex to accelerate development workflows and explore agentic engineering patterns.
     </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section>
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>iOS Developer — Ultra Stellar</h3>
-        <p style="opacity:0.7;">Mar 2019 – Dec 2024 • Remote</p>
-        <br>
-        <p>
-        • Built secure Web3 crypto wallet & payment flows<br>
-        • Developed logistics/cargo delivery system using UIKit<br>
-        • Increased engagement by 25% via API + wallet improvements<br>
-        • Improved delivery speed by 15% using async/await<br>
-        • Reduced crash rate by 15% via architecture refactoring<br>
-        • Improved retention by 35% through UX collaboration<br>
-        • Increased stability by 25% using production debugging tools
-        </p>
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects (GitHub Portfolio)</h2>
-
-    <div class="card">
-        <h3>Web3 Crypto Wallet & Payment System</h3>
-        <p>
-            Secure iOS wallet supporting crypto payments, transaction flows, and API integrations for Web3 systems.
-        </p>
-        <p style="opacity:0.7;">Swift • UIKit • RxSwift • Web3 SDK • Keychain Security</p>
-    </div>
-
-    <div class="card">
-        <h3>Logistics / Cargo Delivery Platform</h3>
-        <p>
-            Rebuilt logistics operations app with SwiftUI focusing on performance, scalability, and UX optimization.
-        </p>
-        <p style="opacity:0.7;">SwiftUI • MVVM-C • Core Data • Async/Await</p>
-    </div>
-
-    <div class="card">
-        <h3>AI-Augmented iOS Engineering Workflow</h3>
-        <p>
-            Integrated AI tools into development workflow to improve code generation, debugging, and architecture decisions.
-        </p>
-        <p style="opacity:0.7;">Cursor • Claude • ChatGPT • Codex • Swift</p>
-    </div>
-
-    <div class="card">
-        <h3>Production App Stability & Refactor Project</h3>
-        <p>
-            Refactored legacy iOS systems using SOLID principles, reducing crash rates and improving maintainability.
-        </p>
-        <p style="opacity:0.7;">Architecture • UIKit • Crashlytics • Performance Engineering</p>
-    </div>
-</section>
-
-<!-- EDUCATION -->
+    <!-- EDUCATION -->
 <section>
     <h2>Education</h2>
-
     <div class="card">
         <h3>Belarusian State University of Informatics and Radioelectronics</h3>
         <p style="opacity:0.7;">Bachelor — Electronic Security Systems (2012 – 2020)</p>
-        <br>
-        <p>
-            Foundation in systems architecture, security engineering, and computational systems design.
-        </p>
     </div>
 </section>
 
@@ -218,9 +167,9 @@ footer {
         <span>UIKit</span>
         <span>TCA</span>
         <span>MVVM-C</span>
+        <span>RxSwift</span>
         <span>Combine</span>
         <span>Async/Await</span>
-        <span>RxSwift</span>
         <span>Core Data</span>
         <span>Keychain</span>
         <span>Web3 SDKs</span>
@@ -234,18 +183,127 @@ footer {
 <section>
     <h2>Contact</h2>
     <div class="card">
-        <p>Email: kost9klinov@gmail.com</p>
+        <p>Email: yourmail@example.com</p>
         <p>GitHub: https://github.com/KlinovK</p>
-        <p>LinkedIn: https://www.linkedin.com/in/kanstantsin-klinau/</p>
+        <p>LinkedIn: linkedin.com/in/yourname</p>
+        <p>Telegram: https://lnkd.in/gasrZCeh</p>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>iOS Developer — Ultra Stellar</h3>
+        <p style="opacity:0.7;">Mar 2019 – Dec 2024 • Remote</p>
         <br>
         <p>
-            Telegram channel: https://lnkd.in/gasrZCeh
+            • Built secure Web3 crypto wallet & payment systems<br>
+            • Developed logistics / driver tracking platform (Uber-like system)<br>
+            • Increased engagement by 25% via API & wallet improvements<br>
+            • Improved performance using async/await & Combine (+15% delivery speed)<br>
+            • Refactored architecture using SOLID principles (−15% bugs)<br>
+            • Improved retention by 35% via UX collaboration<br>
+            • Increased stability by 25% through production debugging
         </p>
     </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Radaro — Real-Time Logistics Platform</h3>
+        <p>
+            Uber-like driver tracking system for real-time job management, navigation, and customer notifications.
+        </p>
+        <p style="opacity:0.7;">Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise</p>
+        <img src="images/radaro.png" alt="Radaro Screenshot">
+    </div>
+
+    <div class="card">
+        <h3>LOBSTR — Stellar Crypto Wallet</h3>
+        <p>
+            Secure blockchain wallet for managing Stellar assets, tokens, and transactions.
+        </p>
+        <p style="opacity:0.7;">Swift • Objective-C • VIPER • NSURLSession • Bitrise</p>
+        <img src="images/lobstr.png" alt="LOBSTR Screenshot">
+    </div>
+
+    <div class="card">
+        <h3>Coindisco — Crypto Market Explorer</h3>
+        <p>
+            Crypto tracking app for monitoring assets and market trends.
+        </p>
+        <p style="opacity:0.7;">Swift • MVVM • CoreData • Moya</p>
+        <img src="images/coindisco.png" alt="Coindisco Screenshot">
+    </div>
+
+    <div class="card">
+        <h3>Realtime Price Tracker</h3>
+        <p>
+            High-performance real-time market tracker using WebSockets and Swift Concurrency.
+        </p>
+        <p style="opacity:0.7;">SwiftUI • WebSockets • async/await • TCA-inspired architecture</p>
+        <a href="https://github.com/KlinovK/crypto-tracker">GitHub</a>
+        <img src="images/realtime.png" alt="Realtime Tracker Screenshot">
+    </div>
+
+    <div class="card">
+        <h3>TopPizza — Food Delivery App</h3>
+        <p>Swift-based food delivery demo app.</p>
+        <a href="https://github.com/KlinovK/TopPizza">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>BlueChipsObserver — Market Analytics</h3>
+        <p>BTC & ETH real-time tracking app built with SwiftUI.</p>
+        <a href="https://github.com/KlinovK/BlueChipsObserver">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>DOCREADER — Document Scanner</h3>
+        <p>Document scanning app using VisionKit + SwiftData storage.</p>
+        <a href="https://github.com/KlinovK/ai-doc-reader">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>SpeechToText + AI Chat</h3>
+        <p>
+            Offline AI chat app using Speech framework + Ollama LLM integration.
+        </p>
+        <a href="https://github.com/KlinovK/TextToSpeech">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>LiveBeer — TCA Architecture Demo</h3>
+        <p>SwiftUI architecture demo with TCA-inspired design.</p>
+        <a href="https://github.com/KlinovK/live-beer-test-task">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>TaskTree — Hierarchical Task System</h3>
+        <p>Task system with priority inheritance & cancellation propagation.</p>
+        <a href="https://github.com/KlinovK/TaskTreeView">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>LeetCode Solutions</h3>
+        <p>Swift algorithm practice for interviews.</p>
+        <a href="https://github.com/KlinovK/leetcode">GitHub</a>
+    </div>
+
+    <div class="card">
+        <h3>LinkedIn Code Snippets</h3>
+        <p>Technical Swift/iOS snippets from posts and breakdowns.</p>
+        <a href="https://github.com/KlinovK/linkedin_posts">GitHub</a>
+    </div>
+</section>
+
 <footer>
-    © 2026 AI-Powered iOS Developer — Built for scalable mobile systems ⚡
+    © 2026 AI-Powered iOS Engineer — Built for scalable systems ⚡
 </footer>
 
 </body>
