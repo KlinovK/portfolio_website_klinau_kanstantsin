@@ -302,6 +302,26 @@ a:hover {
     font-size: 20px;
 }
 
+
+.no-image-placeholder {
+    display: flex;
+}
+
+.placeholder-icon {
+    font-size: 2.2rem;
+    color: #00f5ff;
+    margin-bottom: 12px;
+}
+
+.placeholder-label {
+    margin-top: 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
 /* =========================
    PROJECT MODAL
    ========================= */
@@ -681,46 +701,18 @@ footer {
 
 <script>
 const projects = [
-    {
-        title: "Radaro — Real-Time Logistics Platform",
-        shortTitle: "Radaro",
-        image: "radaro-1.png",
-        shortDescription: "Real-time logistics and driver tracking platform.",
-        description:
-            "Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows. The app focuses on real-time updates, background location processing, reliability, and scalable mobile architecture.",
-        stack: "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
-        github: ""
-    },
-    {
-        title: "LOBSTR — Stellar Crypto Wallet",
-        shortTitle: "LOBSTR",
-        image: "lobstr-1.png",
-        shortDescription: "Secure Stellar blockchain wallet.",
-        description:
-            "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions. The application includes secure storage, wallet management, financial APIs, and blockchain integrations.",
-        stack: "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
-        github: ""
-    },
-    {
-        title: "Coindisco — Crypto Market Explorer",
-        shortTitle: "Coindisco",
-        image: "coindisco-1.png",
-        shortDescription: "Cryptocurrency market explorer.",
-        description:
-            "Crypto market tracking application for monitoring digital assets, price movements, and market trends with a clean native iOS architecture.",
-        stack: "Swift • MVVM • CoreData • Moya",
-        github: ""
-    },
-    {
-        title: "Realtime Price Tracker",
-        shortTitle: "Realtime Tracker",
-        image: "realtime-tracker-1.png",
-        shortDescription: "Live cryptocurrency market tracking.",
-        description:
-            "High-performance cryptocurrency market tracker using WebSockets for live price updates and Swift Concurrency for asynchronous state management.",
-        stack: "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
-        github: "https://github.com/KlinovK/crypto-tracker"
-    }
+    { title:"Radaro — Real-Time Logistics Platform", shortTitle:"Radaro", image:"radaro-1.png", shortDescription:"Real-time logistics and driver tracking platform.", description:"Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows.", stack:"Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise", github:"" },
+    { title:"LOBSTR — Stellar Crypto Wallet", shortTitle:"LOBSTR", image:"lobstr-1.png", shortDescription:"Secure Stellar blockchain wallet.", description:"Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions.", stack:"Swift • Objective-C • VIPER • NSURLSession • Bitrise", github:"" },
+    { title:"Coindisco — Crypto Market Explorer", shortTitle:"Coindisco", image:"coindisco-1.png", shortDescription:"Cryptocurrency market explorer.", description:"Crypto market tracking application for monitoring digital assets, price movements, and market trends.", stack:"Swift • MVVM • CoreData • Moya", github:"" },
+    { title:"Realtime Price Tracker", shortTitle:"Realtime Tracker", image:"realtime-tracker-1.png", shortDescription:"Live cryptocurrency market tracking.", description:"High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.", stack:"SwiftUI • WebSockets • async/await • TCA-inspired architecture", github:"https://github.com/KlinovK/crypto-tracker" },
+    { title:"TopPizza — Food Delivery App", shortTitle:"TopPizza", image:"", shortDescription:"Swift-based food delivery demo app.", description:"Native iOS food delivery demo focused on reusable UI, networking, and navigation.", stack:"Swift • UIKit • Networking", github:"https://github.com/KlinovK/TopPizza" },
+    { title:"BlueChipsObserver — Market Analytics", shortTitle:"BlueChipsObserver", image:"", shortDescription:"BTC & ETH real-time tracking app.", description:"SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.", stack:"SwiftUI • Crypto APIs • Real-Time Data", github:"https://github.com/KlinovK/BlueChipsObserver" },
+    { title:"DOCREADER — Document Scanner", shortTitle:"DOCREADER", image:"", shortDescription:"Document scanning with VisionKit and SwiftData.", description:"Native document scanning application using VisionKit and SwiftData.", stack:"SwiftUI • VisionKit • SwiftData", github:"https://github.com/KlinovK/ai-doc-reader" },
+    { title:"SpeechToText + AI Chat", shortTitle:"SpeechToText + AI", image:"", shortDescription:"Offline AI chat with speech recognition.", description:"Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.", stack:"Swift • Speech Framework • Ollama • AI", github:"https://github.com/KlinovK/TextToSpeech" },
+    { title:"LiveBeer — TCA Architecture Demo", shortTitle:"LiveBeer", image:"", shortDescription:"SwiftUI architecture demo.", description:"SwiftUI demo focused on predictable state management and TCA-inspired architecture.", stack:"SwiftUI • TCA-inspired Architecture", github:"https://github.com/KlinovK/live-beer-test-task" },
+    { title:"TaskTree — Hierarchical Task System", shortTitle:"TaskTree", image:"", shortDescription:"Task hierarchy with cancellation propagation.", description:"Hierarchical task system demonstrating priority inheritance, cancellation propagation, and structured concurrency.", stack:"Swift • Concurrency • Task Management", github:"https://github.com/KlinovK/TaskTreeView" },
+    { title:"LeetCode Solutions", shortTitle:"LeetCode", image:"", shortDescription:"Swift algorithm practice for interviews.", description:"Collection of algorithm and data structure solutions written in Swift.", stack:"Swift • Algorithms • Data Structures", github:"https://github.com/KlinovK/leetcode" },
+    { title:"LinkedIn Code Snippets", shortTitle:"LinkedIn Snippets", image:"", shortDescription:"Swift and iOS technical snippets.", description:"Technical Swift and iOS snippets for posts and engineering breakdowns.", stack:"Swift • iOS • Architecture • Engineering Notes", github:"https://github.com/KlinovK/linkedin_posts" }
 ];
 
 const projectsTrack = document.getElementById("projectsTrack");
@@ -743,13 +735,21 @@ function createProjectCards() {
             onkeydown="handleCardKey(event, ${index})"
         >
             <div class="project-image-container">
-                <img
-                    class="project-image"
-                    src="${escapeHTML(project.image)}"
-                    alt="${escapeHTML(project.shortTitle)} screenshot"
-                    onerror="showCardFallback(this)"
-                >
-                <div class="project-image-fallback">${escapeHTML(project.shortTitle)}</div>
+                ${project.image ? `
+                    <img class="project-image"
+                         src="${escapeHTML(project.image)}"
+                         alt="${escapeHTML(project.shortTitle)} screenshot"
+                         onerror="showCardFallback(this)">
+                    <div class="project-image-fallback">${escapeHTML(project.shortTitle)}</div>
+                ` : `
+                    <div class="project-image-fallback no-image-placeholder">
+                        <div>
+                            <div class="placeholder-icon">⌘</div>
+                            <div>${escapeHTML(project.shortTitle)}</div>
+                            <div class="placeholder-label">Project Preview</div>
+                        </div>
+                    </div>
+                `}
             </div>
 
             <div class="project-content">
@@ -812,17 +812,22 @@ function openProject(index) {
     modalDescription.textContent = project.description;
     modalStack.textContent = project.stack;
 
-    modalImage.style.display = "block";
-    modalImageFallback.style.display = "none";
-
-    modalImage.src = project.image;
-    modalImage.alt = `${project.shortTitle} project preview`;
-
-    modalImage.onerror = function() {
+    if (project.image) {
+        modalImage.style.display = "block";
+        modalImageFallback.style.display = "none";
+        modalImage.src = project.image;
+        modalImage.alt = `${project.shortTitle} project preview`;
+        modalImage.onerror = function() {
+            modalImage.style.display = "none";
+            modalImageFallback.textContent = project.shortTitle;
+            modalImageFallback.style.display = "flex";
+        };
+    } else {
+        modalImage.removeAttribute("src");
         modalImage.style.display = "none";
         modalImageFallback.textContent = project.shortTitle;
         modalImageFallback.style.display = "flex";
-    };
+    }
 
     modalLinks.innerHTML = "";
 
