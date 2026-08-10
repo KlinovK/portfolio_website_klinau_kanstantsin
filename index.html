@@ -10,7 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,7 +25,7 @@ body {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,34 +35,38 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 1.05;
     background: linear-gradient(90deg, #00f5ff, #a855f7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero p {
-    margin-top: 15px;
+    margin-top: 20px;
     opacity: 0.9;
     font-size: 1.1rem;
     max-width: 900px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .btn {
-    margin-top: 25px;
-    padding: 12px 25px;
+    margin-top: 28px;
+    padding: 13px 26px;
     border: none;
     border-radius: 30px;
     background: linear-gradient(90deg, #00f5ff, #a855f7);
     color: black;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,245,255,0.2);
 }
 
 /* SECTIONS */
@@ -74,6 +82,14 @@ h2 {
     color: #00f5ff;
 }
 
+h3 {
+    line-height: 1.35;
+}
+
+p {
+    line-height: 1.65;
+}
+
 /* CARD */
 .card {
     background: rgba(255,255,255,0.05);
@@ -82,6 +98,7 @@ h2 {
     padding: 20px;
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0,255,255,0.08);
     transition: 0.3s;
 }
@@ -89,12 +106,6 @@ h2 {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 40px rgba(168,85,247,0.25);
-}
-
-.card img {
-    width: 100%;
-    margin-top: 12px;
-    border-radius: 10px;
 }
 
 /* SKILLS */
@@ -113,10 +124,373 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   PROJECT COLLECTION
+   ========================= */
+
+.projects-section {
+    max-width: 1400px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.hero-projects {
+    width: min(1400px, 100%);
+    margin-top: 55px;
+    text-align: left;
+}
+
+.hero-projects .projects-track {
+    width: 100%;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.projects-header h2 {
+    margin-bottom: 0;
+}
+
+.project-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.project-navigation button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.project-navigation button:hover {
+    background: rgba(0,245,255,0.15);
+    border-color: #00f5ff;
+}
+
+.projects-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 10px 4px 30px;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+}
+
+.projects-track::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0,245,255,0.4);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.3),
+        0 0 30px rgba(0,245,255,0.12);
+}
+
+.project-card:focus-visible {
+    outline: 2px solid #00f5ff;
+    outline-offset: 4px;
+}
+
+/* Every collection image has identical dimensions */
+.project-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #090b10;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.04);
+}
+
+/* Fallback shown when image is missing */
+.project-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0,245,255,0.12), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(168,85,247,0.16), transparent 35%),
+        #090b10;
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    min-height: 48px;
+    margin-bottom: 18px;
+}
+
+.project-stack {
+    color: #00f5ff;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    min-height: 42px;
+    margin-bottom: 18px;
+}
+
+.project-view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-view span:last-child {
+    color: #00f5ff;
+    font-size: 20px;
+}
+
+/* =========================
+   PROJECT MODAL
+   ========================= */
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.project-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.project-modal-content {
+    position: relative;
+    width: min(1000px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #0b0e15;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    box-shadow: 0 30px 100px rgba(0,0,0,0.6);
+    transform: scale(0.96) translateY(10px);
+    transition: transform 0.25s ease;
+}
+
+.project-modal.active .project-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #05060a;
+    border-radius: 24px 24px 0 0;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.modal-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(0,245,255,0.12), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(168,85,247,0.16), transparent 35%),
+        #05060a;
+    color: rgba(255,255,255,0.75);
+    font-weight: 700;
+}
+
+.modal-info {
+    padding: 32px;
+}
+
+.modal-info h2 {
+    margin-bottom: 15px;
+}
+
+.modal-info p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.modal-stack {
+    color: #00f5ff !important;
+}
+
+.modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.modal-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 20px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00f5ff, #a855f7);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.modal-link:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* CONTACT */
+.contact-list {
+    display: grid;
+    gap: 8px;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
     opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .projects-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project-card {
+        flex-basis: 85vw;
+    }
+
+    .project-navigation {
+        display: none;
+    }
+
+    .project-modal {
+        padding: 15px;
+    }
+
+    .modal-info {
+        padding: 22px;
+    }
+
+    .modal-image-container {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
 }
 </style>
 </head>
@@ -131,9 +505,20 @@ footer {
         I build high-performance iOS applications with full ownership — from architecture design to production scaling.
     </p>
 
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        View Projects
-    </button>
+    <!-- PROJECTS DIRECTLY UNDER HERO TEXT -->
+    <div id="projects" class="projects-section hero-projects">
+
+        <div class="projects-header">
+            <h2>Selected Projects</h2>
+
+            <div class="project-navigation">
+                <button type="button" onclick="scrollProjects(-1)" aria-label="Previous projects">←</button>
+                <button type="button" onclick="scrollProjects(1)" aria-label="Next projects">→</button>
+            </div>
+        </div>
+
+        <div class="projects-track" id="projectsTrack"></div>
+    </div>
 </div>
 
 <!-- ABOUT -->
@@ -152,6 +537,7 @@ footer {
 <!-- SKILLS -->
 <section>
     <h2>Core Stack</h2>
+
     <div class="card skills">
         <span>Swift</span>
         <span>SwiftUI</span>
@@ -192,7 +578,7 @@ footer {
             <strong>System Ownership & Architecture</strong><br>
             • Designed and evolved modular iOS architectures using MVVM-C and TCA-inspired patterns<br>
             • Refactored legacy codebases into scalable, testable, and maintainable systems<br>
-            • Applied SOLID principles and separation of concerns to reduce long-term engineering complexity<br>
+            • Applied SOLID principles and separation of concerns to reduce long-term engineering complexity
         </p>
 
         <br>
@@ -201,7 +587,7 @@ footer {
             <strong>Web3 & Fintech Systems</strong><br>
             • Built secure crypto wallet and payment flows for Stellar-based Web3 applications<br>
             • Integrated blockchain SDKs and financial APIs for asset management and transactions<br>
-            • Focused on security-first engineering using Keychain, secure storage, and safe network layers<br>
+            • Focused on security-first engineering using Keychain, secure storage, and safe network layers
         </p>
 
         <br>
@@ -210,7 +596,7 @@ footer {
             <strong>Logistics & Real-Time Systems</strong><br>
             • Developed real-time driver tracking and logistics coordination platform (Uber-like system)<br>
             • Implemented live job dispatching, navigation workflows, and customer notification systems<br>
-            • Optimized real-time updates and background performance for production reliability<br>
+            • Optimized real-time updates and background performance for production reliability
         </p>
 
         <br>
@@ -237,6 +623,7 @@ footer {
 <!-- EDUCATION -->
 <section>
     <h2>Education</h2>
+
     <div class="card">
         <h3>Belarusian State University of Informatics and Radioelectronics</h3>
         <p style="opacity:0.7;">Bachelor — Electronic Security Systems (2012 – 2020)</p>
@@ -246,109 +633,246 @@ footer {
 <!-- CONTACT -->
 <section>
     <h2>Contact</h2>
-    <div class="card">
-        <p>Email: kost9klinov@gmail.com</p>
-        <p>GitHub: https://github.com/KlinovK</p>
-        <p>LinkedIn: https://www.linkedin.com/in/kanstantsin-klinau/</p>
-        <p>Telegram: @kanstantsinklinau</p>
-    </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>Radaro — Real-Time Logistics Platform</h3>
-        <p>
-            Uber-like driver tracking system for real-time job management, navigation, and customer notifications.
-        </p>
-        <p style="opacity:0.7;">Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise</p>
-        <img src="radaro-1.png" alt="Radaro Screenshot">
-    </div>
-
-    <div class="card">
-        <h3>LOBSTR — Stellar Crypto Wallet</h3>
-        <p>
-            Secure blockchain wallet for managing Stellar assets, tokens, and transactions.
-        </p>
-        <p style="opacity:0.7;">Swift • Objective-C • VIPER • NSURLSession • Bitrise</p>
-        <img src="lobstr-1.png" alt="LOBSTR Screenshot">
-    </div>
-
-    <div class="card">
-        <h3>Coindisco — Crypto Market Explorer</h3>
-        <p>
-            Crypto tracking app for monitoring assets and market trends.
-        </p>
-        <p style="opacity:0.7;">Swift • MVVM • CoreData • Moya</p>
-        <img src="coindisco-1.png" alt="Coindisco Screenshot">
-    </div>
-
-    <div class="card">
-        <h3>Realtime Price Tracker</h3>
-        <p>
-            High-performance real-time market tracker using WebSockets and Swift Concurrency.
-        </p>
-        <p style="opacity:0.7;">SwiftUI • WebSockets • async/await • TCA-inspired architecture</p>
-        <a href="https://github.com/KlinovK/crypto-tracker">GitHub</a>
-        <img src="realtime-tracker-1.png" alt="Realtime Tracker Screenshot">
-    </div>
-
-    <div class="card">
-        <h3>TopPizza — Food Delivery App</h3>
-        <p>Swift-based food delivery demo app.</p>
-        <a href="https://github.com/KlinovK/TopPizza">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>BlueChipsObserver — Market Analytics</h3>
-        <p>BTC & ETH real-time tracking app built with SwiftUI.</p>
-        <a href="https://github.com/KlinovK/BlueChipsObserver">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>DOCREADER — Document Scanner</h3>
-        <p>Document scanning app using VisionKit + SwiftData storage.</p>
-        <a href="https://github.com/KlinovK/ai-doc-reader">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>SpeechToText + AI Chat</h3>
-        <p>
-            Offline AI chat app using Speech framework + Ollama LLM integration.
-        </p>
-        <a href="https://github.com/KlinovK/TextToSpeech">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>LiveBeer — TCA Architecture Demo</h3>
-        <p>SwiftUI architecture demo with TCA-inspired design.</p>
-        <a href="https://github.com/KlinovK/live-beer-test-task">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>TaskTree — Hierarchical Task System</h3>
-        <p>Task system with priority inheritance & cancellation propagation.</p>
-        <a href="https://github.com/KlinovK/TaskTreeView">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>LeetCode Solutions</h3>
-        <p>Swift algorithm practice for interviews.</p>
-        <a href="https://github.com/KlinovK/leetcode">GitHub</a>
-    </div>
-
-    <div class="card">
-        <h3>LinkedIn Code Snippets</h3>
-        <p>Technical Swift/iOS snippets from posts and breakdowns.</p>
-        <a href="https://github.com/KlinovK/linkedin_posts">GitHub</a>
+    <div class="card contact-list">
+        <p>Email: <a href="mailto:kost9klinov@gmail.com">kost9klinov@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/KlinovK" target="_blank" rel="noopener noreferrer">github.com/KlinovK</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kanstantsin-klinau/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kanstantsin-klinau</a></p>
+        <p>Telegram: <a href="https://t.me/kanstantsinklinau" target="_blank" rel="noopener noreferrer">@kanstantsinklinau</a></p>
     </div>
 </section>
 
 <footer>
-    © 2026 AI-Powered iOS Engineer — Built for scalable systems ⚡
+    © 2026 AI-Powered iOS Engineer — Built for scalable systems
 </footer>
+
+<!-- PROJECT DETAIL MODAL -->
+<div
+    class="project-modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    onclick="closeProjectFromBackground(event)"
+>
+    <div class="project-modal-content">
+        <button
+            class="modal-close"
+            type="button"
+            onclick="closeProject()"
+            aria-label="Close project preview"
+        >
+            ×
+        </button>
+
+        <div class="modal-image-container">
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div id="modalImageFallback" class="modal-image-fallback">Project Preview</div>
+        </div>
+
+        <div class="modal-info">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p class="modal-stack" id="modalStack"></p>
+            <div class="modal-links" id="modalLinks"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const projects = [
+    {
+        title: "Radaro — Real-Time Logistics Platform",
+        shortTitle: "Radaro",
+        image: "radaro-1.png",
+        shortDescription: "Real-time logistics and driver tracking platform.",
+        description:
+            "Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows. The app focuses on real-time updates, background location processing, reliability, and scalable mobile architecture.",
+        stack: "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
+        github: ""
+    },
+    {
+        title: "LOBSTR — Stellar Crypto Wallet",
+        shortTitle: "LOBSTR",
+        image: "lobstr-1.png",
+        shortDescription: "Secure Stellar blockchain wallet.",
+        description:
+            "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions. The application includes secure storage, wallet management, financial APIs, and blockchain integrations.",
+        stack: "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
+        github: ""
+    },
+    {
+        title: "Coindisco — Crypto Market Explorer",
+        shortTitle: "Coindisco",
+        image: "coindisco-1.png",
+        shortDescription: "Cryptocurrency market explorer.",
+        description:
+            "Crypto market tracking application for monitoring digital assets, price movements, and market trends with a clean native iOS architecture.",
+        stack: "Swift • MVVM • CoreData • Moya",
+        github: ""
+    },
+    {
+        title: "Realtime Price Tracker",
+        shortTitle: "Realtime Tracker",
+        image: "realtime-tracker-1.png",
+        shortDescription: "Live cryptocurrency market tracking.",
+        description:
+            "High-performance cryptocurrency market tracker using WebSockets for live price updates and Swift Concurrency for asynchronous state management.",
+        stack: "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
+        github: "https://github.com/KlinovK/crypto-tracker"
+    }
+];
+
+const projectsTrack = document.getElementById("projectsTrack");
+const modal = document.getElementById("projectModal");
+const modalImage = document.getElementById("modalImage");
+const modalImageFallback = document.getElementById("modalImageFallback");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalStack = document.getElementById("modalStack");
+const modalLinks = document.getElementById("modalLinks");
+
+function createProjectCards() {
+    projectsTrack.innerHTML = projects.map((project, index) => `
+        <article
+            class="project-card"
+            tabindex="0"
+            role="button"
+            aria-label="Open ${escapeHTML(project.shortTitle)} project details"
+            onclick="openProject(${index})"
+            onkeydown="handleCardKey(event, ${index})"
+        >
+            <div class="project-image-container">
+                <img
+                    class="project-image"
+                    src="${escapeHTML(project.image)}"
+                    alt="${escapeHTML(project.shortTitle)} screenshot"
+                    onerror="showCardFallback(this)"
+                >
+                <div class="project-image-fallback">${escapeHTML(project.shortTitle)}</div>
+            </div>
+
+            <div class="project-content">
+                <h3>${escapeHTML(project.shortTitle)}</h3>
+
+                <p class="project-description">
+                    ${escapeHTML(project.shortDescription)}
+                </p>
+
+                <p class="project-stack">
+                    ${escapeHTML(project.stack)}
+                </p>
+
+                <div class="project-view">
+                    <span>View Project</span>
+                    <span>→</span>
+                </div>
+            </div>
+        </article>
+    `).join("");
+}
+
+function escapeHTML(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function showCardFallback(image) {
+    image.style.display = "none";
+    const fallback = image.nextElementSibling;
+    if (fallback) {
+        fallback.style.display = "flex";
+    }
+}
+
+function scrollProjects(direction) {
+    const card = projectsTrack.querySelector(".project-card");
+
+    if (!card) {
+        return;
+    }
+
+    const gap = 24;
+    const cardWidth = card.offsetWidth + gap;
+
+    projectsTrack.scrollBy({
+        left: cardWidth * direction,
+        behavior: "smooth"
+    });
+}
+
+function openProject(index) {
+    const project = projects[index];
+
+    modalTitle.textContent = project.title;
+    modalDescription.textContent = project.description;
+    modalStack.textContent = project.stack;
+
+    modalImage.style.display = "block";
+    modalImageFallback.style.display = "none";
+
+    modalImage.src = project.image;
+    modalImage.alt = `${project.shortTitle} project preview`;
+
+    modalImage.onerror = function() {
+        modalImage.style.display = "none";
+        modalImageFallback.textContent = project.shortTitle;
+        modalImageFallback.style.display = "flex";
+    };
+
+    modalLinks.innerHTML = "";
+
+    if (project.github) {
+        const githubLink = document.createElement("a");
+
+        githubLink.href = project.github;
+        githubLink.target = "_blank";
+        githubLink.rel = "noopener noreferrer";
+        githubLink.className = "modal-link";
+        githubLink.textContent = "View on GitHub";
+
+        githubLink.addEventListener("click", event => {
+            event.stopPropagation();
+        });
+
+        modalLinks.appendChild(githubLink);
+    }
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.querySelector(".modal-close").focus();
+}
+
+function closeProject() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+function closeProjectFromBackground(event) {
+    if (event.target === modal) {
+        closeProject();
+    }
+}
+
+function handleCardKey(event, index) {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openProject(index);
+    }
+}
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+        closeProject();
+    }
+});
+
+createProjectCards();
+</script>
 
 </body>
 </html>
