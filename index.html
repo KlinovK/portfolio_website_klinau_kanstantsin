@@ -487,11 +487,19 @@ a:hover {
     color: black;
     font-weight: 700;
     text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-link.secondary {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,245,255,0.3);
+    color: #00f5ff;
 }
 
 .modal-link:hover {
     text-decoration: none;
     transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(0,245,255,0.12);
 }
 
 .modal-close {
@@ -583,8 +591,10 @@ footer {
 <!-- HERO -->
 <div class="hero">
     <h1>Senior iOS & AI Software Engineer</h1>
+
     <p>
-        7+ Years iOS Experience • Scalable Architecture • Web3, Fintech & Logistics • Full-Stack AI Products<br><br>
+        7+ Years iOS Experience • Scalable Architecture • Web3, Fintech & Logistics • Full-Stack AI Products
+        <br><br>
         I build production-grade iOS applications and AI-powered products end-to-end —
         from mobile architecture and backend integration to RAG systems and production deployment.
     </p>
@@ -596,8 +606,21 @@ footer {
             <h2>Selected Projects</h2>
 
             <div class="project-navigation">
-                <button type="button" onclick="scrollProjects(-1)" aria-label="Previous projects">←</button>
-                <button type="button" onclick="scrollProjects(1)" aria-label="Next projects">→</button>
+                <button
+                    type="button"
+                    onclick="scrollProjects(-1)"
+                    aria-label="Previous projects"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    onclick="scrollProjects(1)"
+                    aria-label="Next projects"
+                >
+                    →
+                </button>
             </div>
         </div>
 
@@ -622,7 +645,8 @@ footer {
         <br><br>
 
         I actively use AI tools such as Cursor, ChatGPT, Claude, and Codex to accelerate development workflows,
-        automate repetitive engineering tasks, review code, debug production issues, and explore agentic engineering patterns.
+        automate repetitive engineering tasks, review code, debug production issues,
+        and explore agentic engineering patterns.
     </div>
 </section>
 
@@ -645,6 +669,7 @@ footer {
         <span>StoreKit</span>
         <span>RevenueCat</span>
         <span>Next.js</span>
+        <span>React</span>
         <span>TypeScript</span>
         <span>Supabase</span>
         <span>PostgreSQL</span>
@@ -712,6 +737,7 @@ footer {
     <div class="card">
         <h3>iOS Software Engineer — Ultra Stellar</h3>
         <p style="opacity:0.7;">Mar 2019 – Dec 2024 • Remote</p>
+
         <br>
 
         <p>
@@ -743,7 +769,7 @@ footer {
 
         <p>
             <strong>Logistics & Real-Time Systems</strong><br>
-            • Developed real-time driver tracking and logistics coordination platform (Uber-like system)<br>
+            • Developed a real-time driver tracking and logistics coordination platform<br>
             • Implemented live job dispatching, navigation workflows, and customer notification systems<br>
             • Optimized real-time updates and background performance for production reliability
         </p>
@@ -755,7 +781,7 @@ footer {
             • Increased delivery velocity by ~15% by adopting Swift Concurrency (async/await) and Combine<br>
             • Reduced crash rate and production bugs by ~15% through architecture refactoring<br>
             • Improved user retention by ~35% through UX engineering collaboration<br>
-            • Increased app stability in high-traffic environments by ~25% via production debugging & monitoring
+            • Increased app stability in high-traffic environments by ~25% via production debugging and monitoring
         </p>
 
         <br>
@@ -775,7 +801,9 @@ footer {
 
     <div class="card">
         <h3>Belarusian State University of Informatics and Radioelectronics</h3>
-        <p style="opacity:0.7;">Bachelor — Electronic Security Systems (2012 – 2020)</p>
+        <p style="opacity:0.7;">
+            Bachelor — Electronic Security Systems (2012 – 2020)
+        </p>
     </div>
 </section>
 
@@ -784,10 +812,45 @@ footer {
     <h2>Contact</h2>
 
     <div class="card contact-list">
-        <p>Email: <a href="mailto:kost9klinov@gmail.com">kost9klinov@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/KlinovK" target="_blank" rel="noopener noreferrer">github.com/KlinovK</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kanstantsin-klinau/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kanstantsin-klinau</a></p>
-        <p>Telegram: <a href="https://t.me/kanstantsinklinau" target="_blank" rel="noopener noreferrer">@kanstantsinklinau</a></p>
+        <p>
+            Email:
+            <a href="mailto:kost9klinov@gmail.com">
+                kost9klinov@gmail.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a
+                href="https://github.com/KlinovK"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                github.com/KlinovK
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a
+                href="https://www.linkedin.com/in/kanstantsin-klinau/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                linkedin.com/in/kanstantsin-klinau
+            </a>
+        </p>
+
+        <p>
+            Telegram:
+            <a
+                href="https://t.me/kanstantsinklinau"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @kanstantsinklinau
+            </a>
+        </p>
     </div>
 </section>
 
@@ -805,6 +868,7 @@ footer {
     onclick="closeProjectFromBackground(event)"
 >
     <div class="project-modal-content">
+
         <button
             class="modal-close"
             type="button"
@@ -815,142 +879,263 @@ footer {
         </button>
 
         <div class="modal-image-container">
-            <img id="modalImage" class="modal-image" src="" alt="">
-            <div id="modalImageFallback" class="modal-image-fallback">Project Preview</div>
+            <img
+                id="modalImage"
+                class="modal-image"
+                src=""
+                alt=""
+            >
+
+            <div
+                id="modalImageFallback"
+                class="modal-image-fallback"
+            >
+                Project Preview
+            </div>
         </div>
 
         <div class="modal-info">
             <h2 id="modalTitle"></h2>
+
             <p id="modalDescription"></p>
-            <p class="modal-stack" id="modalStack"></p>
-            <div class="modal-links" id="modalLinks"></div>
+
+            <p
+                class="modal-stack"
+                id="modalStack"
+            ></p>
+
+            <div
+                class="modal-links"
+                id="modalLinks"
+            ></div>
         </div>
     </div>
 </div>
 
 <script>
 const projects = [
+
+    /*
+     * ANSWERBASE
+     * Added as the FIRST project.
+     */
+    {
+        title: "Answerbase — Embeddable AI Support Platform",
+        shortTitle: "Answerbase",
+        image: "",
+        shortDescription: "Full-stack RAG platform for AI-powered customer support.",
+        description:
+            "Full-stack SaaS MVP that turns company documents into a grounded AI support chatbot. " +
+            "Users can upload company knowledge, process documents into vector embeddings, " +
+            "ask questions using semantic search and RAG, receive source-grounded answers, " +
+            "and embed the chatbot on external websites. " +
+            "The product includes authentication, private storage, vector search, pricing tiers, " +
+            "feature gating, production deployment, and an embeddable public widget.",
+        stack:
+            "Next.js • React • TypeScript • Supabase • PostgreSQL • pgvector • OpenAI • RAG • Vercel",
+        github: "https://github.com/KlinovK/answerbase",
+        liveDemo: "https://answerbase-drab.vercel.app"
+    },
+
     {
         title: "Radaro — Real-Time Logistics Platform",
         shortTitle: "Radaro",
         image: "radaro-1.png",
         shortDescription: "Real-time logistics and driver tracking platform.",
-        description: "Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows.",
-        stack: "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
-        github: ""
+        description:
+            "Uber-like driver tracking system for real-time job management, navigation, " +
+            "customer notifications, and production logistics workflows.",
+        stack:
+            "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
+        github: "",
+        liveDemo: ""
     },
+
     {
         title: "LOBSTR — Stellar Crypto Wallet",
         shortTitle: "LOBSTR",
         image: "lobstr-1.png",
         shortDescription: "Secure Stellar blockchain wallet.",
-        description: "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions.",
-        stack: "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
-        github: ""
+        description:
+            "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, " +
+            "and blockchain transactions.",
+        stack:
+            "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
+        github: "",
+        liveDemo: ""
     },
+
     {
         title: "Coindisco — Crypto Market Explorer",
         shortTitle: "Coindisco",
         image: "coindisco-1.png",
         shortDescription: "Cryptocurrency market explorer.",
-        description: "Crypto market tracking application for monitoring digital assets, price movements, and market trends.",
-        stack: "Swift • MVVM • CoreData • Moya",
-        github: ""
+        description:
+            "Crypto market tracking application for monitoring digital assets, " +
+            "price movements, and market trends.",
+        stack:
+            "Swift • MVVM • CoreData • Moya",
+        github: "",
+        liveDemo: ""
     },
+
     {
         title: "Realtime Price Tracker",
         shortTitle: "Realtime Tracker",
         image: "realtime-tracker-1.png",
         shortDescription: "Live cryptocurrency market tracking.",
-        description: "High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.",
-        stack: "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
-        github: "https://github.com/KlinovK/crypto-tracker"
+        description:
+            "High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.",
+        stack:
+            "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
+        github:
+            "https://github.com/KlinovK/crypto-tracker",
+        liveDemo: ""
     },
+
     {
         title: "TopPizza — Food Delivery App",
         shortTitle: "TopPizza",
         image: "",
         shortDescription: "Swift-based food delivery demo app.",
-        description: "Native iOS food delivery demo focused on reusable UI, networking, and navigation.",
-        stack: "Swift • UIKit • Networking",
-        github: "https://github.com/KlinovK/TopPizza"
+        description:
+            "Native iOS food delivery demo focused on reusable UI, networking, and navigation.",
+        stack:
+            "Swift • UIKit • Networking",
+        github:
+            "https://github.com/KlinovK/TopPizza",
+        liveDemo: ""
     },
+
     {
         title: "BlueChipsObserver — Market Analytics",
         shortTitle: "BlueChipsObserver",
         image: "",
         shortDescription: "BTC & ETH real-time tracking app.",
-        description: "SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.",
-        stack: "SwiftUI • Crypto APIs • Real-Time Data",
-        github: "https://github.com/KlinovK/BlueChipsObserver"
+        description:
+            "SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.",
+        stack:
+            "SwiftUI • Crypto APIs • Real-Time Data",
+        github:
+            "https://github.com/KlinovK/BlueChipsObserver",
+        liveDemo: ""
     },
+
     {
         title: "DOCREADER — Document Scanner",
         shortTitle: "DOCREADER",
         image: "",
         shortDescription: "Document scanning with VisionKit and SwiftData.",
-        description: "Native document scanning application using VisionKit and SwiftData.",
-        stack: "SwiftUI • VisionKit • SwiftData",
-        github: "https://github.com/KlinovK/ai-doc-reader"
+        description:
+            "Native document scanning application using VisionKit and SwiftData.",
+        stack:
+            "SwiftUI • VisionKit • SwiftData",
+        github:
+            "https://github.com/KlinovK/ai-doc-reader",
+        liveDemo: ""
     },
+
     {
         title: "SpeechToText + AI Chat",
         shortTitle: "SpeechToText + AI",
         image: "",
         shortDescription: "Offline AI chat with speech recognition.",
-        description: "Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.",
-        stack: "Swift • Speech Framework • Ollama • AI",
-        github: "https://github.com/KlinovK/TextToSpeech"
+        description:
+            "Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.",
+        stack:
+            "Swift • Speech Framework • Ollama • AI",
+        github:
+            "https://github.com/KlinovK/TextToSpeech",
+        liveDemo: ""
     },
+
     {
         title: "LiveBeer — TCA Architecture Demo",
         shortTitle: "LiveBeer",
         image: "",
         shortDescription: "SwiftUI architecture demo.",
-        description: "SwiftUI demo focused on predictable state management and TCA-inspired architecture.",
-        stack: "SwiftUI • TCA-inspired Architecture",
-        github: "https://github.com/KlinovK/live-beer-test-task"
+        description:
+            "SwiftUI demo focused on predictable state management and TCA-inspired architecture.",
+        stack:
+            "SwiftUI • TCA-inspired Architecture",
+        github:
+            "https://github.com/KlinovK/live-beer-test-task",
+        liveDemo: ""
     },
+
     {
         title: "TaskTree — Hierarchical Task System",
         shortTitle: "TaskTree",
         image: "",
         shortDescription: "Task hierarchy with cancellation propagation.",
-        description: "Hierarchical task system demonstrating priority inheritance, cancellation propagation, and structured concurrency.",
-        stack: "Swift • Concurrency • Task Management",
-        github: "https://github.com/KlinovK/TaskTreeView"
+        description:
+            "Hierarchical task system demonstrating priority inheritance, " +
+            "cancellation propagation, and structured concurrency.",
+        stack:
+            "Swift • Concurrency • Task Management",
+        github:
+            "https://github.com/KlinovK/TaskTreeView",
+        liveDemo: ""
     },
+
     {
         title: "LeetCode Solutions",
         shortTitle: "LeetCode",
         image: "",
         shortDescription: "Swift algorithm practice for interviews.",
-        description: "Collection of algorithm and data structure solutions written in Swift.",
-        stack: "Swift • Algorithms • Data Structures",
-        github: "https://github.com/KlinovK/leetcode"
+        description:
+            "Collection of algorithm and data structure solutions written in Swift.",
+        stack:
+            "Swift • Algorithms • Data Structures",
+        github:
+            "https://github.com/KlinovK/leetcode",
+        liveDemo: ""
     },
+
     {
         title: "LinkedIn Code Snippets",
         shortTitle: "LinkedIn Snippets",
         image: "",
         shortDescription: "Swift and iOS technical snippets.",
-        description: "Technical Swift and iOS snippets for posts and engineering breakdowns.",
-        stack: "Swift • iOS • Architecture • Engineering Notes",
-        github: "https://github.com/KlinovK/linkedin_posts"
+        description:
+            "Technical Swift and iOS snippets for posts and engineering breakdowns.",
+        stack:
+            "Swift • iOS • Architecture • Engineering Notes",
+        github:
+            "https://github.com/KlinovK/linkedin_posts",
+        liveDemo: ""
     }
 ];
 
-const projectsTrack = document.getElementById("projectsTrack");
-const modal = document.getElementById("projectModal");
-const modalImage = document.getElementById("modalImage");
-const modalImageFallback = document.getElementById("modalImageFallback");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalStack = document.getElementById("modalStack");
-const modalLinks = document.getElementById("modalLinks");
+const projectsTrack =
+    document.getElementById("projectsTrack");
+
+const modal =
+    document.getElementById("projectModal");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalImageFallback =
+    document.getElementById("modalImageFallback");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalStack =
+    document.getElementById("modalStack");
+
+const modalLinks =
+    document.getElementById("modalLinks");
+
 
 function createProjectCards() {
+
     projectsTrack.innerHTML = projects.map((project, index) => `
+
         <article
             class="project-card"
             tabindex="0"
@@ -959,28 +1144,49 @@ function createProjectCards() {
             onclick="openProject(${index})"
             onkeydown="handleCardKey(event, ${index})"
         >
+
             <div class="project-image-container">
+
                 ${project.image ? `
+
                     <img
                         class="project-image"
                         src="${escapeHTML(project.image)}"
                         alt="${escapeHTML(project.shortTitle)} screenshot"
                         onerror="showCardFallback(this)"
                     >
-                    <div class="project-image-fallback">${escapeHTML(project.shortTitle)}</div>
+
+                    <div class="project-image-fallback">
+                        ${escapeHTML(project.shortTitle)}
+                    </div>
+
                 ` : `
+
                     <div class="project-image-fallback no-image-placeholder">
+
                         <div>
                             <div class="placeholder-icon">⌘</div>
-                            <div>${escapeHTML(project.shortTitle)}</div>
-                            <div class="placeholder-label">Project Preview</div>
+
+                            <div>
+                                ${escapeHTML(project.shortTitle)}
+                            </div>
+
+                            <div class="placeholder-label">
+                                Project Preview
+                            </div>
                         </div>
+
                     </div>
+
                 `}
+
             </div>
 
             <div class="project-content">
-                <h3>${escapeHTML(project.shortTitle)}</h3>
+
+                <h3>
+                    ${escapeHTML(project.shortTitle)}
+                </h3>
 
                 <p class="project-description">
                     ${escapeHTML(project.shortDescription)}
@@ -994,12 +1200,17 @@ function createProjectCards() {
                     <span>View Project</span>
                     <span>→</span>
                 </div>
+
             </div>
+
         </article>
+
     `).join("");
 }
 
+
 function escapeHTML(value) {
+
     return String(value)
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
@@ -1008,25 +1219,33 @@ function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
+
 function showCardFallback(image) {
+
     image.style.display = "none";
 
-    const fallback = image.nextElementSibling;
+    const fallback =
+        image.nextElementSibling;
 
     if (fallback) {
         fallback.style.display = "flex";
     }
 }
 
+
 function scrollProjects(direction) {
-    const card = projectsTrack.querySelector(".project-card");
+
+    const card =
+        projectsTrack.querySelector(".project-card");
 
     if (!card) {
         return;
     }
 
     const gap = 24;
-    const cardWidth = card.offsetWidth + gap;
+
+    const cardWidth =
+        card.offsetWidth + gap;
 
     projectsTrack.scrollBy({
         left: cardWidth * direction,
@@ -1034,77 +1253,197 @@ function scrollProjects(direction) {
     });
 }
 
-function openProject(index) {
-    const project = projects[index];
 
-    modalTitle.textContent = project.title;
-    modalDescription.textContent = project.description;
-    modalStack.textContent = project.stack;
+function openProject(index) {
+
+    const project =
+        projects[index];
+
+    modalTitle.textContent =
+        project.title;
+
+    modalDescription.textContent =
+        project.description;
+
+    modalStack.textContent =
+        project.stack;
+
+
+    /* IMAGE */
 
     if (project.image) {
-        modalImage.style.display = "block";
-        modalImageFallback.style.display = "none";
-        modalImage.src = project.image;
-        modalImage.alt = `${project.shortTitle} project preview`;
+
+        modalImage.style.display =
+            "block";
+
+        modalImageFallback.style.display =
+            "none";
+
+        modalImage.src =
+            project.image;
+
+        modalImage.alt =
+            `${project.shortTitle} project preview`;
 
         modalImage.onerror = function() {
-            modalImage.style.display = "none";
-            modalImageFallback.textContent = project.shortTitle;
-            modalImageFallback.style.display = "flex";
+
+            modalImage.style.display =
+                "none";
+
+            modalImageFallback.textContent =
+                project.shortTitle;
+
+            modalImageFallback.style.display =
+                "flex";
         };
+
     } else {
+
         modalImage.removeAttribute("src");
-        modalImage.style.display = "none";
-        modalImageFallback.textContent = project.shortTitle;
-        modalImageFallback.style.display = "flex";
+
+        modalImage.style.display =
+            "none";
+
+        modalImageFallback.textContent =
+            project.shortTitle;
+
+        modalImageFallback.style.display =
+            "flex";
     }
+
+
+    /* LINKS */
 
     modalLinks.innerHTML = "";
 
-    if (project.github) {
-        const githubLink = document.createElement("a");
 
-        githubLink.href = project.github;
-        githubLink.target = "_blank";
-        githubLink.rel = "noopener noreferrer";
-        githubLink.className = "modal-link";
-        githubLink.textContent = "View on GitHub";
+    /* LIVE DEMO */
 
-        githubLink.addEventListener("click", event => {
-            event.stopPropagation();
-        });
+    if (project.liveDemo) {
 
-        modalLinks.appendChild(githubLink);
+        const demoLink =
+            document.createElement("a");
+
+        demoLink.href =
+            project.liveDemo;
+
+        demoLink.target =
+            "_blank";
+
+        demoLink.rel =
+            "noopener noreferrer";
+
+        demoLink.className =
+            "modal-link";
+
+        demoLink.textContent =
+            "Live Demo";
+
+        demoLink.addEventListener(
+            "click",
+            event => {
+                event.stopPropagation();
+            }
+        );
+
+        modalLinks.appendChild(
+            demoLink
+        );
     }
 
+
+    /* GITHUB */
+
+    if (project.github) {
+
+        const githubLink =
+            document.createElement("a");
+
+        githubLink.href =
+            project.github;
+
+        githubLink.target =
+            "_blank";
+
+        githubLink.rel =
+            "noopener noreferrer";
+
+        githubLink.className =
+            project.liveDemo
+                ? "modal-link secondary"
+                : "modal-link";
+
+        githubLink.textContent =
+            "View on GitHub";
+
+        githubLink.addEventListener(
+            "click",
+            event => {
+                event.stopPropagation();
+            }
+        );
+
+        modalLinks.appendChild(
+            githubLink
+        );
+    }
+
+
     modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-    document.querySelector(".modal-close").focus();
+
+    document.body.style.overflow =
+        "hidden";
+
+    document
+        .querySelector(".modal-close")
+        .focus();
 }
+
 
 function closeProject() {
+
     modal.classList.remove("active");
-    document.body.style.overflow = "";
+
+    document.body.style.overflow =
+        "";
 }
 
+
 function closeProjectFromBackground(event) {
+
     if (event.target === modal) {
         closeProject();
     }
 }
 
+
 function handleCardKey(event, index) {
-    if (event.key === "Enter" || event.key === " ") {
+
+    if (
+        event.key === "Enter" ||
+        event.key === " "
+    ) {
+
         event.preventDefault();
+
         openProject(index);
     }
 }
 
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape" && modal.classList.contains("active")) {
-        closeProject();
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+            closeProject();
+        }
     }
-});
+);
+
 
 createProjectCards();
 </script>
