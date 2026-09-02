@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>iOS Engineer Portfolio</title>
+<title>Senior iOS & AI Software Engineer Portfolio</title>
 
 <style>
 * {
@@ -128,6 +128,63 @@ a:hover {
     text-decoration: underline;
 }
 
+/* FULL-STACK & AI */
+.fullstack-project {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.fullstack-project h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.fullstack-project-description {
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 18px;
+}
+
+.fullstack-project-stack {
+    color: #00f5ff;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.fullstack-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.fullstack-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 18px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00f5ff, #a855f7);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fullstack-link.secondary {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,245,255,0.3);
+    color: #00f5ff;
+}
+
+.fullstack-link:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(0,245,255,0.12);
+}
+
 /* =========================
    PROJECT COLLECTION
    ========================= */
@@ -225,7 +282,6 @@ a:hover {
     outline-offset: 4px;
 }
 
-/* Every collection image has identical dimensions */
 .project-image-container {
     width: 100%;
     aspect-ratio: 16 / 10;
@@ -246,7 +302,6 @@ a:hover {
     transform: scale(1.04);
 }
 
-/* Fallback shown when image is missing */
 .project-image-fallback {
     width: 100%;
     height: 100%;
@@ -301,7 +356,6 @@ a:hover {
     color: #00f5ff;
     font-size: 20px;
 }
-
 
 .no-image-placeholder {
     display: flex;
@@ -501,6 +555,15 @@ footer {
     .modal-image-container {
         aspect-ratio: 4 / 3;
     }
+
+    .fullstack-project {
+        grid-template-columns: 1fr;
+    }
+
+    .fullstack-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -519,10 +582,11 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>AI-Powered iOS Engineer</h1>
+    <h1>Senior iOS & AI Software Engineer</h1>
     <p>
-        7+ Years Experience • Scalable Architecture • Web3, Fintech & Logistics Systems • AI-Augmented Development<br><br>
-        I build high-performance iOS applications with full ownership — from architecture design to production scaling.
+        7+ Years iOS Experience • Scalable Architecture • Web3, Fintech & Logistics • Full-Stack AI Products<br><br>
+        I build production-grade iOS applications and AI-powered products end-to-end —
+        from mobile architecture and backend integration to RAG systems and production deployment.
     </p>
 
     <!-- PROJECTS DIRECTLY UNDER HERO TEXT -->
@@ -544,13 +608,21 @@ footer {
 <!-- ABOUT -->
 <section>
     <h2>About Me</h2>
+
     <div class="card">
         I am an iOS Software Engineer with 7+ years of experience building secure, scalable mobile applications.
-        I specialize in system design, modular architectures (TCA, MVVM-C), performance optimization, and production-grade mobile systems.
+        I specialize in system design, modular architectures (TCA, MVVM-C), performance optimization,
+        and production-grade mobile systems.
 
         <br><br>
 
-        I also actively use AI tools like Cursor, ChatGPT, Claude, and Codex to accelerate development workflows and explore agentic engineering patterns.
+        Alongside iOS development, I build full-stack AI products using modern web infrastructure,
+        retrieval-augmented generation, vector search, and production cloud services.
+
+        <br><br>
+
+        I actively use AI tools such as Cursor, ChatGPT, Claude, and Codex to accelerate development workflows,
+        automate repetitive engineering tasks, review code, debug production issues, and explore agentic engineering patterns.
     </div>
 </section>
 
@@ -572,7 +644,64 @@ footer {
         <span>Web3 SDKs</span>
         <span>StoreKit</span>
         <span>RevenueCat</span>
+        <span>Next.js</span>
+        <span>TypeScript</span>
+        <span>Supabase</span>
+        <span>PostgreSQL</span>
+        <span>pgvector</span>
+        <span>OpenAI</span>
+        <span>RAG</span>
         <span>AI Tools</span>
+    </div>
+</section>
+
+<!-- FULL-STACK & AI -->
+<section>
+    <h2>Full-Stack & AI</h2>
+
+    <div class="card fullstack-project">
+        <div>
+            <h3>Answerbase — Embeddable AI Support Platform</h3>
+
+            <p class="fullstack-project-description">
+                Full-stack SaaS MVP that turns company documents into a grounded AI support chatbot.
+                Users can upload company knowledge, process documents into vector embeddings,
+                test RAG-based answers with source citations, and embed the chatbot on external websites.
+            </p>
+
+            <p class="fullstack-project-description">
+                Built the product end-to-end including authentication, database architecture,
+                private document storage, document processing, semantic search, AI answer generation,
+                public widget integration, pricing tiers, feature gating, production deployment,
+                and production debugging.
+            </p>
+
+            <p class="fullstack-project-stack">
+                Next.js • React • TypeScript • Supabase Auth • PostgreSQL • pgvector •
+                Row Level Security • Supabase Storage • OpenAI Embeddings • RAG •
+                Server Actions • Vercel
+            </p>
+        </div>
+
+        <div class="fullstack-links">
+            <a
+                class="fullstack-link"
+                href="https://answerbase-drab.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Live Demo
+            </a>
+
+            <a
+                class="fullstack-link secondary"
+                href="https://github.com/KlinovK/answerbase"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+        </div>
     </div>
 </section>
 
@@ -663,7 +792,7 @@ footer {
 </section>
 
 <footer>
-    © 2026 AI-Powered iOS Engineer — Built for scalable systems
+    © 2026 Senior iOS & AI Software Engineer — Built for scalable systems
 </footer>
 
 <!-- PROJECT DETAIL MODAL -->
@@ -701,18 +830,114 @@ footer {
 
 <script>
 const projects = [
-    { title:"Radaro — Real-Time Logistics Platform", shortTitle:"Radaro", image:"radaro-1.png", shortDescription:"Real-time logistics and driver tracking platform.", description:"Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows.", stack:"Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise", github:"" },
-    { title:"LOBSTR — Stellar Crypto Wallet", shortTitle:"LOBSTR", image:"lobstr-1.png", shortDescription:"Secure Stellar blockchain wallet.", description:"Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions.", stack:"Swift • Objective-C • VIPER • NSURLSession • Bitrise", github:"" },
-    { title:"Coindisco — Crypto Market Explorer", shortTitle:"Coindisco", image:"coindisco-1.png", shortDescription:"Cryptocurrency market explorer.", description:"Crypto market tracking application for monitoring digital assets, price movements, and market trends.", stack:"Swift • MVVM • CoreData • Moya", github:"" },
-    { title:"Realtime Price Tracker", shortTitle:"Realtime Tracker", image:"realtime-tracker-1.png", shortDescription:"Live cryptocurrency market tracking.", description:"High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.", stack:"SwiftUI • WebSockets • async/await • TCA-inspired architecture", github:"https://github.com/KlinovK/crypto-tracker" },
-    { title:"TopPizza — Food Delivery App", shortTitle:"TopPizza", image:"", shortDescription:"Swift-based food delivery demo app.", description:"Native iOS food delivery demo focused on reusable UI, networking, and navigation.", stack:"Swift • UIKit • Networking", github:"https://github.com/KlinovK/TopPizza" },
-    { title:"BlueChipsObserver — Market Analytics", shortTitle:"BlueChipsObserver", image:"", shortDescription:"BTC & ETH real-time tracking app.", description:"SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.", stack:"SwiftUI • Crypto APIs • Real-Time Data", github:"https://github.com/KlinovK/BlueChipsObserver" },
-    { title:"DOCREADER — Document Scanner", shortTitle:"DOCREADER", image:"", shortDescription:"Document scanning with VisionKit and SwiftData.", description:"Native document scanning application using VisionKit and SwiftData.", stack:"SwiftUI • VisionKit • SwiftData", github:"https://github.com/KlinovK/ai-doc-reader" },
-    { title:"SpeechToText + AI Chat", shortTitle:"SpeechToText + AI", image:"", shortDescription:"Offline AI chat with speech recognition.", description:"Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.", stack:"Swift • Speech Framework • Ollama • AI", github:"https://github.com/KlinovK/TextToSpeech" },
-    { title:"LiveBeer — TCA Architecture Demo", shortTitle:"LiveBeer", image:"", shortDescription:"SwiftUI architecture demo.", description:"SwiftUI demo focused on predictable state management and TCA-inspired architecture.", stack:"SwiftUI • TCA-inspired Architecture", github:"https://github.com/KlinovK/live-beer-test-task" },
-    { title:"TaskTree — Hierarchical Task System", shortTitle:"TaskTree", image:"", shortDescription:"Task hierarchy with cancellation propagation.", description:"Hierarchical task system demonstrating priority inheritance, cancellation propagation, and structured concurrency.", stack:"Swift • Concurrency • Task Management", github:"https://github.com/KlinovK/TaskTreeView" },
-    { title:"LeetCode Solutions", shortTitle:"LeetCode", image:"", shortDescription:"Swift algorithm practice for interviews.", description:"Collection of algorithm and data structure solutions written in Swift.", stack:"Swift • Algorithms • Data Structures", github:"https://github.com/KlinovK/leetcode" },
-    { title:"LinkedIn Code Snippets", shortTitle:"LinkedIn Snippets", image:"", shortDescription:"Swift and iOS technical snippets.", description:"Technical Swift and iOS snippets for posts and engineering breakdowns.", stack:"Swift • iOS • Architecture • Engineering Notes", github:"https://github.com/KlinovK/linkedin_posts" }
+    {
+        title: "Radaro — Real-Time Logistics Platform",
+        shortTitle: "Radaro",
+        image: "radaro-1.png",
+        shortDescription: "Real-time logistics and driver tracking platform.",
+        description: "Uber-like driver tracking system for real-time job management, navigation, customer notifications, and production logistics workflows.",
+        stack: "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
+        github: ""
+    },
+    {
+        title: "LOBSTR — Stellar Crypto Wallet",
+        shortTitle: "LOBSTR",
+        image: "lobstr-1.png",
+        shortDescription: "Secure Stellar blockchain wallet.",
+        description: "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, and blockchain transactions.",
+        stack: "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
+        github: ""
+    },
+    {
+        title: "Coindisco — Crypto Market Explorer",
+        shortTitle: "Coindisco",
+        image: "coindisco-1.png",
+        shortDescription: "Cryptocurrency market explorer.",
+        description: "Crypto market tracking application for monitoring digital assets, price movements, and market trends.",
+        stack: "Swift • MVVM • CoreData • Moya",
+        github: ""
+    },
+    {
+        title: "Realtime Price Tracker",
+        shortTitle: "Realtime Tracker",
+        image: "realtime-tracker-1.png",
+        shortDescription: "Live cryptocurrency market tracking.",
+        description: "High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.",
+        stack: "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
+        github: "https://github.com/KlinovK/crypto-tracker"
+    },
+    {
+        title: "TopPizza — Food Delivery App",
+        shortTitle: "TopPizza",
+        image: "",
+        shortDescription: "Swift-based food delivery demo app.",
+        description: "Native iOS food delivery demo focused on reusable UI, networking, and navigation.",
+        stack: "Swift • UIKit • Networking",
+        github: "https://github.com/KlinovK/TopPizza"
+    },
+    {
+        title: "BlueChipsObserver — Market Analytics",
+        shortTitle: "BlueChipsObserver",
+        image: "",
+        shortDescription: "BTC & ETH real-time tracking app.",
+        description: "SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.",
+        stack: "SwiftUI • Crypto APIs • Real-Time Data",
+        github: "https://github.com/KlinovK/BlueChipsObserver"
+    },
+    {
+        title: "DOCREADER — Document Scanner",
+        shortTitle: "DOCREADER",
+        image: "",
+        shortDescription: "Document scanning with VisionKit and SwiftData.",
+        description: "Native document scanning application using VisionKit and SwiftData.",
+        stack: "SwiftUI • VisionKit • SwiftData",
+        github: "https://github.com/KlinovK/ai-doc-reader"
+    },
+    {
+        title: "SpeechToText + AI Chat",
+        shortTitle: "SpeechToText + AI",
+        image: "",
+        shortDescription: "Offline AI chat with speech recognition.",
+        description: "Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.",
+        stack: "Swift • Speech Framework • Ollama • AI",
+        github: "https://github.com/KlinovK/TextToSpeech"
+    },
+    {
+        title: "LiveBeer — TCA Architecture Demo",
+        shortTitle: "LiveBeer",
+        image: "",
+        shortDescription: "SwiftUI architecture demo.",
+        description: "SwiftUI demo focused on predictable state management and TCA-inspired architecture.",
+        stack: "SwiftUI • TCA-inspired Architecture",
+        github: "https://github.com/KlinovK/live-beer-test-task"
+    },
+    {
+        title: "TaskTree — Hierarchical Task System",
+        shortTitle: "TaskTree",
+        image: "",
+        shortDescription: "Task hierarchy with cancellation propagation.",
+        description: "Hierarchical task system demonstrating priority inheritance, cancellation propagation, and structured concurrency.",
+        stack: "Swift • Concurrency • Task Management",
+        github: "https://github.com/KlinovK/TaskTreeView"
+    },
+    {
+        title: "LeetCode Solutions",
+        shortTitle: "LeetCode",
+        image: "",
+        shortDescription: "Swift algorithm practice for interviews.",
+        description: "Collection of algorithm and data structure solutions written in Swift.",
+        stack: "Swift • Algorithms • Data Structures",
+        github: "https://github.com/KlinovK/leetcode"
+    },
+    {
+        title: "LinkedIn Code Snippets",
+        shortTitle: "LinkedIn Snippets",
+        image: "",
+        shortDescription: "Swift and iOS technical snippets.",
+        description: "Technical Swift and iOS snippets for posts and engineering breakdowns.",
+        stack: "Swift • iOS • Architecture • Engineering Notes",
+        github: "https://github.com/KlinovK/linkedin_posts"
+    }
 ];
 
 const projectsTrack = document.getElementById("projectsTrack");
@@ -736,10 +961,12 @@ function createProjectCards() {
         >
             <div class="project-image-container">
                 ${project.image ? `
-                    <img class="project-image"
-                         src="${escapeHTML(project.image)}"
-                         alt="${escapeHTML(project.shortTitle)} screenshot"
-                         onerror="showCardFallback(this)">
+                    <img
+                        class="project-image"
+                        src="${escapeHTML(project.image)}"
+                        alt="${escapeHTML(project.shortTitle)} screenshot"
+                        onerror="showCardFallback(this)"
+                    >
                     <div class="project-image-fallback">${escapeHTML(project.shortTitle)}</div>
                 ` : `
                     <div class="project-image-fallback no-image-placeholder">
@@ -783,7 +1010,9 @@ function escapeHTML(value) {
 
 function showCardFallback(image) {
     image.style.display = "none";
+
     const fallback = image.nextElementSibling;
+
     if (fallback) {
         fallback.style.display = "flex";
     }
@@ -817,6 +1046,7 @@ function openProject(index) {
         modalImageFallback.style.display = "none";
         modalImage.src = project.image;
         modalImage.alt = `${project.shortTitle} project preview`;
+
         modalImage.onerror = function() {
             modalImage.style.display = "none";
             modalImageFallback.textContent = project.shortTitle;
