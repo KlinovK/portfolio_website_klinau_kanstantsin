@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Senior iOS & AI Software Engineer Portfolio</title>
+
+<title>Senior iOS Engineer | Web3, FinTech & AI</title>
 
 <style>
 * {
@@ -24,6 +25,7 @@ body {
 }
 
 /* HERO */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -31,15 +33,22 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .hero h1 {
     font-size: clamp(2.6rem, 7vw, 5rem);
     line-height: 1.05;
-    background: linear-gradient(90deg, #00f5ff, #a855f7);
+
+    background: linear-gradient(
+        90deg,
+        #00f5ff,
+        #a855f7
+    );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     background-clip: text;
     color: transparent;
 }
@@ -52,24 +61,58 @@ body {
     line-height: 1.7;
 }
 
-.btn {
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
     margin-top: 28px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 13px 26px;
+
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #00f5ff, #a855f7);
+
+    background: linear-gradient(
+        90deg,
+        #00f5ff,
+        #a855f7
+    );
+
     color: black;
     font-weight: 700;
+
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn.secondary {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,245,255,0.35);
+    color: #00f5ff;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0,245,255,0.2);
+    text-decoration: none;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0,245,255,0.18);
 }
 
 /* SECTIONS */
+
 section {
     padding: 80px 20px;
     max-width: 1000px;
@@ -90,35 +133,90 @@ p {
     line-height: 1.65;
 }
 
+.section-intro {
+    color: rgba(255,255,255,0.65);
+    margin-top: -12px;
+    margin-bottom: 30px;
+    max-width: 780px;
+}
+
 /* CARD */
+
 .card {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
     border-radius: 15px;
+
     padding: 20px;
+
     margin-bottom: 20px;
+
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0,255,255,0.08);
-    transition: 0.3s;
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(168,85,247,0.25);
+
+    border-color:
+        rgba(0,245,255,0.22);
+
+    box-shadow:
+        0 0 40px rgba(168,85,247,0.20);
+}
+
+/* ABOUT */
+
+.about-highlight {
+    color: white;
+    font-weight: 700;
 }
 
 /* SKILLS */
+
+.skill-group {
+    margin-bottom: 26px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-group h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.8);
+}
+
 .skills span {
     display: inline-block;
+
     margin: 5px;
+
     padding: 8px 12px;
+
     border-radius: 20px;
-    background: rgba(0,255,255,0.1);
-    border: 1px solid rgba(0,255,255,0.3);
+
+    background:
+        rgba(0,255,255,0.1);
+
+    border:
+        1px solid rgba(0,255,255,0.3);
 }
 
 /* LINKS */
+
 a {
     color: #00f5ff;
     text-decoration: none;
@@ -128,88 +226,31 @@ a:hover {
     text-decoration: underline;
 }
 
-/* FULL-STACK & AI */
-.fullstack-project {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 30px;
-    align-items: center;
-}
-
-.fullstack-project h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.fullstack-project-description {
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 18px;
-}
-
-.fullstack-project-stack {
-    color: #00f5ff;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.fullstack-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 160px;
-}
-
-.fullstack-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 11px 18px;
-    border-radius: 30px;
-    background: linear-gradient(90deg, #00f5ff, #a855f7);
-    color: black;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.fullstack-link.secondary {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(0,245,255,0.3);
-    color: #00f5ff;
-}
-
-.fullstack-link:hover {
-    text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: 0 10px 30px rgba(0,245,255,0.12);
-}
-
-/* =========================
-   PROJECT COLLECTION
-   ========================= */
+/* PROJECT COLLECTION */
 
 .projects-section {
     max-width: 1400px;
+
     padding-left: 40px;
     padding-right: 40px;
 }
 
 .hero-projects {
     width: min(1400px, 100%);
-    margin-top: 55px;
-    text-align: left;
-}
 
-.hero-projects .projects-track {
-    width: 100%;
+    margin-top: 60px;
+
+    text-align: left;
 }
 
 .projects-header {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 20px;
+
     margin-bottom: 25px;
 }
 
@@ -225,29 +266,46 @@ a:hover {
 .project-navigation button {
     width: 44px;
     height: 44px;
+
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.06);
+
     color: white;
+
     font-size: 20px;
+
     cursor: pointer;
+
     transition: 0.25s;
 }
 
 .project-navigation button:hover {
-    background: rgba(0,245,255,0.15);
+    background:
+        rgba(0,245,255,0.15);
+
     border-color: #00f5ff;
 }
 
 .projects-track {
     display: flex;
+
     gap: 24px;
+
     overflow-x: auto;
     overflow-y: hidden;
+
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+
     padding: 10px 4px 30px;
+
     scrollbar-width: none;
+
     overscroll-behavior-inline: contain;
 }
 
@@ -257,12 +315,21 @@ a:hover {
 
 .project-card {
     flex: 0 0 350px;
+
     scroll-snap-align: start;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
     border-radius: 20px;
+
     overflow: hidden;
+
     cursor: pointer;
+
     transition:
         transform 0.3s ease,
         border-color 0.3s ease,
@@ -271,31 +338,43 @@ a:hover {
 
 .project-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0,245,255,0.4);
+
+    border-color:
+        rgba(0,245,255,0.4);
+
     box-shadow:
         0 20px 60px rgba(0,0,0,0.3),
         0 0 30px rgba(0,245,255,0.12);
 }
 
 .project-card:focus-visible {
-    outline: 2px solid #00f5ff;
+    outline:
+        2px solid #00f5ff;
+
     outline-offset: 4px;
 }
 
 .project-image-container {
     width: 100%;
+
     aspect-ratio: 16 / 10;
+
     background: #090b10;
+
     overflow: hidden;
 }
 
 .project-image {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
+
     display: block;
-    transition: transform 0.4s ease;
+
+    transition:
+        transform 0.4s ease;
 }
 
 .project-card:hover .project-image {
@@ -305,56 +384,36 @@ a:hover {
 .project-image-fallback {
     width: 100%;
     height: 100%;
+
     display: none;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 24px;
+
     background:
-        radial-gradient(circle at 30% 20%, rgba(0,245,255,0.12), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(168,85,247,0.16), transparent 35%),
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(0,245,255,0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(168,85,247,0.16),
+            transparent 35%
+        ),
         #090b10;
-    color: rgba(255,255,255,0.75);
+
+    color:
+        rgba(255,255,255,0.75);
+
     font-weight: 700;
-    letter-spacing: 0.03em;
-}
 
-.project-content {
-    padding: 22px;
-}
-
-.project-content h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.project-description {
-    color: rgba(255,255,255,0.75);
-    line-height: 1.5;
-    min-height: 48px;
-    margin-bottom: 18px;
-}
-
-.project-stack {
-    color: #00f5ff;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    min-height: 42px;
-    margin-bottom: 18px;
-}
-
-.project-view {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.project-view span:last-child {
-    color: #00f5ff;
-    font-size: 20px;
+    letter-spacing:
+        0.03em;
 }
 
 .no-image-placeholder {
@@ -363,37 +422,236 @@ a:hover {
 
 .placeholder-icon {
     font-size: 2.2rem;
+
     color: #00f5ff;
+
     margin-bottom: 12px;
 }
 
 .placeholder-label {
     margin-top: 8px;
+
     font-size: 0.72rem;
+
     font-weight: 500;
-    color: rgba(255,255,255,0.42);
+
+    color:
+        rgba(255,255,255,0.42);
+
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+
+    letter-spacing:
+        0.12em;
 }
 
-/* =========================
-   PROJECT MODAL
-   ========================= */
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 10px;
+}
+
+.project-type {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    color: #a855f7;
+
+    text-transform: uppercase;
+
+    letter-spacing:
+        0.08em;
+}
+
+.project-description {
+    color:
+        rgba(255,255,255,0.75);
+
+    line-height: 1.5;
+
+    min-height: 48px;
+
+    margin-bottom: 18px;
+}
+
+.project-stack {
+    color: #00f5ff;
+
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+
+    min-height: 42px;
+
+    margin-bottom: 18px;
+}
+
+.project-view {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+.project-view span:last-child {
+    color: #00f5ff;
+
+    font-size: 20px;
+}
+
+/* AI CASE STUDY */
+
+.ai-project {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+.ai-project h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 10px;
+}
+
+.ai-project-description {
+    color:
+        rgba(255,255,255,0.75);
+
+    margin-bottom: 18px;
+}
+
+.ai-project-stack {
+    color: #00f5ff;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+.ai-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    min-width: 160px;
+}
+
+.ai-link {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 11px 18px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00f5ff,
+            #a855f7
+        );
+
+    color: black;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ai-link.secondary {
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(0,245,255,0.3);
+
+    color: #00f5ff;
+}
+
+.ai-link:hover {
+    text-decoration: none;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 30px rgba(0,245,255,0.12);
+}
+
+/* EXPERIENCE */
+
+.experience-date {
+    opacity: 0.7;
+
+    margin-top: 4px;
+}
+
+.experience-block {
+    margin-top: 22px;
+}
+
+.experience-block strong {
+    display: inline-block;
+
+    margin-bottom: 5px;
+}
+
+/* PROJECT MODAL */
 
 .project-modal {
     position: fixed;
+
     inset: 0;
+
     z-index: 1000;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     padding: 30px;
-    background: rgba(0,0,0,0.8);
+
+    background:
+        rgba(0,0,0,0.8);
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
     opacity: 0;
     visibility: hidden;
+
     pointer-events: none;
+
     transition:
         opacity 0.25s ease,
         visibility 0.25s ease;
@@ -402,54 +660,94 @@ a:hover {
 .project-modal.active {
     opacity: 1;
     visibility: visible;
+
     pointer-events: auto;
 }
 
 .project-modal-content {
     position: relative;
-    width: min(1000px, 100%);
+
+    width:
+        min(1000px, 100%);
+
     max-height: 90vh;
+
     overflow-y: auto;
+
     background: #0b0e15;
-    border: 1px solid rgba(255,255,255,0.12);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
     border-radius: 24px;
-    box-shadow: 0 30px 100px rgba(0,0,0,0.6);
-    transform: scale(0.96) translateY(10px);
-    transition: transform 0.25s ease;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.6);
+
+    transform:
+        scale(0.96) translateY(10px);
+
+    transition:
+        transform 0.25s ease;
 }
 
-.project-modal.active .project-modal-content {
-    transform: scale(1) translateY(0);
+.project-modal.active
+.project-modal-content {
+    transform:
+        scale(1) translateY(0);
 }
 
 .modal-image-container {
     width: 100%;
+
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
+
     background: #05060a;
-    border-radius: 24px 24px 0 0;
+
+    border-radius:
+        24px 24px 0 0;
 }
 
 .modal-image {
     width: 100%;
     height: 100%;
+
     object-fit: contain;
+
     display: block;
 }
 
 .modal-image-fallback {
     width: 100%;
     height: 100%;
+
     display: none;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 30px;
+
     background:
-        radial-gradient(circle at 30% 20%, rgba(0,245,255,0.12), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(168,85,247,0.16), transparent 35%),
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(0,245,255,0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(168,85,247,0.16),
+            transparent 35%
+        ),
         #05060a;
-    color: rgba(255,255,255,0.75);
+
+    color:
+        rgba(255,255,255,0.75);
+
     font-weight: 700;
 }
 
@@ -462,78 +760,127 @@ a:hover {
 }
 
 .modal-info p {
-    color: rgba(255,255,255,0.75);
+    color:
+        rgba(255,255,255,0.75);
+
     line-height: 1.7;
+
     margin-bottom: 20px;
 }
 
 .modal-stack {
-    color: #00f5ff !important;
+    color:
+        #00f5ff !important;
 }
 
 .modal-links {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 12px;
+
     margin-top: 25px;
 }
 
 .modal-link {
     display: inline-flex;
+
     align-items: center;
+
     padding: 11px 20px;
+
     border-radius: 30px;
-    background: linear-gradient(90deg, #00f5ff, #a855f7);
+
+    background:
+        linear-gradient(
+            90deg,
+            #00f5ff,
+            #a855f7
+        );
+
     color: black;
+
     font-weight: 700;
+
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .modal-link.secondary {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(0,245,255,0.3);
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid rgba(0,245,255,0.3);
+
     color: #00f5ff;
 }
 
 .modal-link:hover {
     text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: 0 10px 30px rgba(0,245,255,0.12);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 30px rgba(0,245,255,0.12);
 }
 
 .modal-close {
     position: absolute;
+
     top: 16px;
     right: 16px;
+
     z-index: 10;
+
     width: 42px;
     height: 42px;
-    border: 1px solid rgba(255,255,255,0.2);
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
     border-radius: 50%;
-    background: rgba(0,0,0,0.65);
+
+    background:
+        rgba(0,0,0,0.65);
+
     color: white;
+
     font-size: 22px;
+
     cursor: pointer;
+
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 /* CONTACT */
+
 .contact-list {
     display: grid;
+
     gap: 8px;
 }
 
 /* FOOTER */
+
 footer {
     text-align: center;
+
     padding: 40px 20px;
+
     opacity: 0.6;
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 700px) {
+
     section {
         padding-top: 60px;
         padding-bottom: 60px;
@@ -564,22 +911,36 @@ footer {
         aspect-ratio: 4 / 3;
     }
 
-    .fullstack-project {
+    .ai-project {
         grid-template-columns: 1fr;
     }
 
-    .fullstack-links {
+    .ai-links {
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    .hero-projects {
+        margin-top: 45px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
         scroll-behavior: auto !important;
+
         transition: none !important;
+
         animation: none !important;
     }
 }
@@ -589,128 +950,485 @@ footer {
 <body>
 
 <!-- HERO -->
+
 <div class="hero">
-    <h1>Senior iOS & AI Software Engineer</h1>
+
+    <h1>
+        Senior iOS Engineer
+    </h1>
 
     <p>
-        7+ Years iOS Experience • Scalable Architecture • Web3, Fintech & Logistics • Full-Stack AI Products
+        7+ Years iOS Experience • Swift • SwiftUI • Web3 • FinTech • Real-Time Systems • AI Integration
+
         <br><br>
-        I build production-grade iOS applications and AI-powered products end-to-end —
-        from mobile architecture and backend integration to RAG systems and production deployment.
+
+        I build production-grade iOS applications with end-to-end ownership —
+        from architecture and secure transaction flows to performance optimization,
+        release, and production support.
+        I also build AI-enabled products and integrate modern LLM workflows into software engineering.
     </p>
 
-    <!-- PROJECTS DIRECTLY UNDER HERO TEXT -->
-    <div id="projects" class="projects-section hero-projects">
+    <div class="hero-actions">
+
+        <a
+            class="btn"
+            href="#production-projects"
+        >
+            View Production Work
+        </a>
+
+        <a
+            class="btn secondary"
+            href="#contact"
+        >
+            Contact Me
+        </a>
+
+    </div>
+
+
+    <!-- PRODUCTION PROJECTS -->
+
+    <div
+        id="production-projects"
+        class="projects-section hero-projects"
+    >
 
         <div class="projects-header">
-            <h2>Selected Projects</h2>
+
+            <div>
+
+                <h2>
+                    Production Projects
+                </h2>
+
+            </div>
 
             <div class="project-navigation">
+
                 <button
                     type="button"
-                    onclick="scrollProjects(-1)"
-                    aria-label="Previous projects"
+                    onclick="scrollProjects('productionProjectsTrack', -1)"
+                    aria-label="Previous production projects"
                 >
                     ←
                 </button>
 
                 <button
                     type="button"
-                    onclick="scrollProjects(1)"
-                    aria-label="Next projects"
+                    onclick="scrollProjects('productionProjectsTrack', 1)"
+                    aria-label="Next production projects"
                 >
                     →
                 </button>
+
             </div>
+
         </div>
 
-        <div class="projects-track" id="projectsTrack"></div>
+        <div
+            class="projects-track"
+            id="productionProjectsTrack"
+        ></div>
+
     </div>
+
 </div>
 
+
 <!-- ABOUT -->
+
 <section>
-    <h2>About Me</h2>
+
+    <h2>
+        About Me
+    </h2>
 
     <div class="card">
-        I am an iOS Software Engineer with 7+ years of experience building secure, scalable mobile applications.
-        I specialize in system design, modular architectures (TCA, MVVM-C), performance optimization,
-        and production-grade mobile systems.
+
+        I am a
+        <span class="about-highlight">
+            Senior iOS Engineer with 7+ years of commercial experience
+        </span>
+        building secure, scalable mobile products across
+        FinTech, Web3, and logistics.
 
         <br><br>
 
-        Alongside iOS development, I build full-stack AI products using modern web infrastructure,
-        retrieval-augmented generation, vector search, and production cloud services.
+        My core expertise includes
+        Swift, SwiftUI, UIKit, Swift Concurrency,
+        modular architecture, real-time systems,
+        secure mobile flows, performance optimization,
+        and production delivery.
 
         <br><br>
 
-        I actively use AI tools such as Cursor, ChatGPT, Claude, and Codex to accelerate development workflows,
-        automate repetitive engineering tasks, review code, debug production issues,
-        and explore agentic engineering patterns.
+        Alongside iOS engineering,
+        I build AI-enabled products using LLM APIs,
+        RAG, vector search, structured data flows,
+        and modern cloud infrastructure.
+
+        I also use coding agents such as
+        Codex, Claude Code, ChatGPT, and Cursor
+        for implementation, refactoring, debugging,
+        testing, documentation, and code review —
+        with engineering validation of generated output.
+
     </div>
+
 </section>
 
-<!-- SKILLS -->
+
+<!-- CORE STACK -->
+
 <section>
-    <h2>Core Stack</h2>
+
+    <h2>
+        Core Stack
+    </h2>
 
     <div class="card skills">
-        <span>Swift</span>
-        <span>SwiftUI</span>
-        <span>UIKit</span>
-        <span>TCA</span>
-        <span>MVVM-C</span>
-        <span>RxSwift</span>
-        <span>Combine</span>
-        <span>Async/Await</span>
-        <span>Core Data</span>
-        <span>Keychain</span>
-        <span>Web3 SDKs</span>
-        <span>StoreKit</span>
-        <span>RevenueCat</span>
-        <span>Next.js</span>
-        <span>React</span>
-        <span>TypeScript</span>
-        <span>Supabase</span>
-        <span>PostgreSQL</span>
-        <span>pgvector</span>
-        <span>OpenAI</span>
-        <span>RAG</span>
-        <span>AI Tools</span>
-    </div>
-</section>
 
-<!-- FULL-STACK & AI -->
-<section>
-    <h2>Full-Stack & AI</h2>
+        <div class="skill-group">
 
-    <div class="card fullstack-project">
-        <div>
-            <h3>Answerbase — Embeddable AI Support Platform</h3>
+            <h3>
+                Primary — iOS Engineering
+            </h3>
 
-            <p class="fullstack-project-description">
-                Full-stack SaaS MVP that turns company documents into a grounded AI support chatbot.
-                Users can upload company knowledge, process documents into vector embeddings,
-                test RAG-based answers with source citations, and embed the chatbot on external websites.
-            </p>
+            <span>Swift</span>
+            <span>SwiftUI</span>
+            <span>UIKit</span>
+            <span>Swift Concurrency</span>
+            <span>Async/Await</span>
+            <span>Actors</span>
+            <span>TCA</span>
+            <span>MVVM-C</span>
+            <span>VIPER</span>
+            <span>RxSwift</span>
+            <span>Combine</span>
+            <span>Core Data</span>
+            <span>SwiftData</span>
+            <span>Keychain</span>
+            <span>StoreKit</span>
+            <span>RevenueCat</span>
+            <span>WebSockets</span>
+            <span>REST APIs</span>
+            <span>Web3 SDKs</span>
 
-            <p class="fullstack-project-description">
-                Built the product end-to-end including authentication, database architecture,
-                private document storage, document processing, semantic search, AI answer generation,
-                public widget integration, pricing tiers, feature gating, production deployment,
-                and production debugging.
-            </p>
-
-            <p class="fullstack-project-stack">
-                Next.js • React • TypeScript • Supabase Auth • PostgreSQL • pgvector •
-                Row Level Security • Supabase Storage • OpenAI Embeddings • RAG •
-                Server Actions • Vercel
-            </p>
         </div>
 
-        <div class="fullstack-links">
+
+        <div class="skill-group">
+
+            <h3>
+                AI & Product Engineering
+            </h3>
+
+            <span>LLM APIs</span>
+            <span>RAG</span>
+            <span>Vector Search</span>
+            <span>OpenAI</span>
+            <span>Codex</span>
+            <span>Claude Code</span>
+            <span>ChatGPT</span>
+            <span>Cursor</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Supabase</span>
+            <span>PostgreSQL</span>
+            <span>pgvector</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section>
+
+    <h2>
+        Experience
+    </h2>
+
+
+    <!-- CONTRACTOR -->
+
+    <div class="card">
+
+        <h3>
+            Senior iOS Developer — Contractor
+        </h3>
+
+        <p class="experience-date">
+            May 2025 – Present • Remote
+        </p>
+
+
+        <div class="experience-block">
+
+            <p>
+                I work on production iOS features across FinTech and logistics products,
+                taking engineering tasks from requirements and technical design
+                through implementation, testing, release, and post-release improvements.
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    Engineering & Architecture
+                </strong><br>
+
+                • Built production features using SwiftUI and UIKit<br>
+
+                • Designed modular, maintainable application components<br>
+
+                • Implemented concurrency-safe async/await workflows<br>
+
+                • Integrated REST APIs, authentication flows,
+                asynchronous data pipelines, and third-party services
+
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    Product Ownership
+                </strong><br>
+
+                • Collaborated with Product, Design, Backend, and QA<br>
+
+                • Participated in requirement refinement,
+                technical trade-offs, estimates, and implementation planning<br>
+
+                • Supported features through production release
+                and subsequent iterations
+
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    AI-Assisted Engineering
+                </strong><br>
+
+                • Use coding agents for implementation,
+                refactoring, debugging, testing, and documentation<br>
+
+                • Validate AI-generated changes through tests,
+                code review, and manual engineering analysis
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ULTRA STELLAR -->
+
+    <div class="card">
+
+        <h3>
+            Senior iOS Developer — Ultra Stellar
+        </h3>
+
+        <p class="experience-date">
+            Mar 2019 – Dec 2024 • Remote
+        </p>
+
+
+        <div class="experience-block">
+
+            <p>
+                I worked on production FinTech, Web3,
+                and real-time mobile products including
+                LOBSTR Wallet, CoinDisco, and logistics systems.
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    System Ownership & Architecture
+                </strong><br>
+
+                • Designed and evolved modular iOS architectures
+                using MVVM-C, VIPER, and TCA-inspired approaches<br>
+
+                • Refactored legacy code into more testable
+                and maintainable components<br>
+
+                • Applied SOLID principles,
+                dependency injection,
+                and protocol-based abstractions
+
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    Web3 & FinTech
+                </strong><br>
+
+                • Built secure crypto wallet and payment flows<br>
+
+                • Integrated blockchain SDKs,
+                financial APIs,
+                asset management,
+                and transaction flows<br>
+
+                • Implemented security-sensitive application logic
+                using Keychain and secure storage
+
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    Real-Time & Networking
+                </strong><br>
+
+                • Implemented REST and WebSocket communication layers<br>
+
+                • Built state synchronization
+                and real-time data pipelines<br>
+
+                • Developed background processing,
+                push notifications,
+                and production synchronization flows
+
+            </p>
+
+        </div>
+
+
+        <div class="experience-block">
+
+            <p>
+
+                <strong>
+                    Reliability & Delivery
+                </strong><br>
+
+                • Investigated crashes and production issues
+                using Crashlytics and Instruments<br>
+
+                • Improved application stability
+                and performance-critical flows<br>
+
+                • Worked with CI/CD,
+                automated builds,
+                signing,
+                TestFlight,
+                and App Store releases
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AI CASE STUDY -->
+
+<section>
+
+    <h2>
+        AI Product Engineering
+    </h2>
+
+    <p class="section-intro">
+        Applied AI engineering projects that extend my mobile background
+        into LLM-powered products, backend services, retrieval systems,
+        and end-to-end product delivery.
+    </p>
+
+    <div class="card ai-project">
+
+        <div>
+
+            <h3>
+                Answerbase — Embeddable AI Support Platform
+            </h3>
+
+            <p class="ai-project-description">
+
+                Full-stack SaaS MVP that turns company documents
+                into a grounded AI support chatbot.
+
+                Users can upload company knowledge,
+                process documents into vector embeddings,
+                query them through semantic search and RAG,
+                receive source-grounded answers,
+                and embed the chatbot on external websites.
+
+            </p>
+
+            <p class="ai-project-description">
+
+                Built end-to-end including authentication,
+                database architecture,
+                private document storage,
+                document processing,
+                vector search,
+                AI answer generation,
+                public widget integration,
+                pricing tiers,
+                feature gating,
+                deployment,
+                and production debugging.
+
+            </p>
+
+            <p class="ai-project-stack">
+
+                Next.js • TypeScript • Supabase Auth • PostgreSQL •
+                pgvector • RLS • Supabase Storage •
+                OpenAI Embeddings • RAG • Server Actions • Vercel
+
+            </p>
+
+        </div>
+
+
+        <div class="ai-links">
+
             <a
-                class="fullstack-link"
+                class="ai-link"
                 href="https://answerbase-drab.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -719,108 +1437,127 @@ footer {
             </a>
 
             <a
-                class="fullstack-link secondary"
+                class="ai-link secondary"
                 href="https://github.com/KlinovK/answerbase"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 GitHub
             </a>
+
         </div>
+
     </div>
+
 </section>
 
-<!-- EXPERIENCE -->
-<section>
-    <h2>Experience</h2>
 
-    <div class="card">
-        <h3>iOS Software Engineer — Ultra Stellar</h3>
-        <p style="opacity:0.7;">Mar 2019 – Dec 2024 • Remote</p>
+<!-- PET PROJECTS -->
 
-        <br>
+<section class="projects-section">
 
-        <p>
-            I worked as the primary iOS engineer responsible for designing, building, and scaling
-            production-grade mobile systems across fintech, Web3, and logistics domains.
-            I owned architecture decisions end-to-end and collaborated closely with product,
-            backend, and design teams to deliver high-performance applications at scale.
-        </p>
+    <div class="projects-header">
 
-        <br>
+        <div>
 
-        <p>
-            <strong>System Ownership & Architecture</strong><br>
-            • Designed and evolved modular iOS architectures using MVVM-C and TCA-inspired patterns<br>
-            • Refactored legacy codebases into scalable, testable, and maintainable systems<br>
-            • Applied SOLID principles and separation of concerns to reduce long-term engineering complexity
-        </p>
+            <h2>
+                Pet Projects & Engineering Experiments
+            </h2>
 
-        <br>
+        </div>
 
-        <p>
-            <strong>Web3 & Fintech Systems</strong><br>
-            • Built secure crypto wallet and payment flows for Stellar-based Web3 applications<br>
-            • Integrated blockchain SDKs and financial APIs for asset management and transactions<br>
-            • Focused on security-first engineering using Keychain, secure storage, and safe network layers
-        </p>
+        <div class="project-navigation">
 
-        <br>
+            <button
+                type="button"
+                onclick="scrollProjects('petProjectsTrack', -1)"
+                aria-label="Previous pet projects"
+            >
+                ←
+            </button>
 
-        <p>
-            <strong>Logistics & Real-Time Systems</strong><br>
-            • Developed a real-time driver tracking and logistics coordination platform<br>
-            • Implemented live job dispatching, navigation workflows, and customer notification systems<br>
-            • Optimized real-time updates and background performance for production reliability
-        </p>
+            <button
+                type="button"
+                onclick="scrollProjects('petProjectsTrack', 1)"
+                aria-label="Next pet projects"
+            >
+                →
+            </button>
 
-        <br>
+        </div>
 
-        <p>
-            <strong>Performance & Engineering Impact</strong><br>
-            • Increased delivery velocity by ~15% by adopting Swift Concurrency (async/await) and Combine<br>
-            • Reduced crash rate and production bugs by ~15% through architecture refactoring<br>
-            • Improved user retention by ~35% through UX engineering collaboration<br>
-            • Increased app stability in high-traffic environments by ~25% via production debugging and monitoring
-        </p>
-
-        <br>
-
-        <p>
-            <strong>Engineering Practices</strong><br>
-            • Worked in CI/CD environments using Bitrise for automated builds and deployments<br>
-            • Collaborated across product and design teams to align technical constraints with UX goals<br>
-            • Actively participated in debugging, performance profiling, and release stabilization cycles
-        </p>
     </div>
+
+    <p class="section-intro">
+
+        Small applications and technical experiments
+        used to explore Swift Concurrency,
+        architecture,
+        AI integration,
+        Apple frameworks,
+        algorithms,
+        and real-time systems.
+
+    </p>
+
+    <div
+        class="projects-track"
+        id="petProjectsTrack"
+    ></div>
+
 </section>
+
 
 <!-- EDUCATION -->
+
 <section>
-    <h2>Education</h2>
+
+    <h2>
+        Education
+    </h2>
 
     <div class="card">
-        <h3>Belarusian State University of Informatics and Radioelectronics</h3>
+
+        <h3>
+            Belarusian State University of Informatics and Radioelectronics
+        </h3>
+
         <p style="opacity:0.7;">
-            Bachelor — Electronic Security Systems (2012 – 2020)
+
+            Bachelor — Electronic Security Systems
+            (2012 – 2020)
+
         </p>
+
     </div>
+
 </section>
 
+
 <!-- CONTACT -->
-<section>
-    <h2>Contact</h2>
+
+<section id="contact">
+
+    <h2>
+        Contact
+    </h2>
 
     <div class="card contact-list">
+
         <p>
             Email:
-            <a href="mailto:kost9klinov@gmail.com">
+
+            <a
+                href="mailto:kost9klinov@gmail.com"
+            >
                 kost9klinov@gmail.com
             </a>
         </p>
 
+
         <p>
             GitHub:
+
             <a
                 href="https://github.com/KlinovK"
                 target="_blank"
@@ -830,8 +1567,10 @@ footer {
             </a>
         </p>
 
+
         <p>
             LinkedIn:
+
             <a
                 href="https://www.linkedin.com/in/kanstantsin-klinau/"
                 target="_blank"
@@ -841,8 +1580,10 @@ footer {
             </a>
         </p>
 
+
         <p>
             Telegram:
+
             <a
                 href="https://t.me/kanstantsinklinau"
                 target="_blank"
@@ -851,14 +1592,19 @@ footer {
                 @kanstantsinklinau
             </a>
         </p>
+
     </div>
+
 </section>
 
+
 <footer>
-    © 2026 Senior iOS & AI Software Engineer — Built for scalable systems
+    © 2026 Senior iOS Engineer — Web3, FinTech & AI
 </footer>
 
+
 <!-- PROJECT DETAIL MODAL -->
+
 <div
     class="project-modal"
     id="projectModal"
@@ -867,6 +1613,7 @@ footer {
     aria-labelledby="modalTitle"
     onclick="closeProjectFromBackground(event)"
 >
+
     <div class="project-modal-content">
 
         <button
@@ -878,7 +1625,9 @@ footer {
             ×
         </button>
 
+
         <div class="modal-image-container">
+
             <img
                 id="modalImage"
                 class="modal-image"
@@ -886,15 +1635,19 @@ footer {
                 alt=""
             >
 
+
             <div
                 id="modalImageFallback"
                 class="modal-image-fallback"
             >
                 Project Preview
             </div>
+
         </div>
 
+
         <div class="modal-info">
+
             <h2 id="modalTitle"></h2>
 
             <p id="modalDescription"></p>
@@ -904,211 +1657,346 @@ footer {
                 id="modalStack"
             ></p>
 
+
             <div
                 class="modal-links"
                 id="modalLinks"
             ></div>
+
         </div>
+
     </div>
+
 </div>
 
+
 <script>
-const projects = [
 
-    /*
-     * ANSWERBASE
-     * Added as the FIRST project.
-     */
-    {
-        title: "Answerbase — Embeddable AI Support Platform",
-        shortTitle: "Answerbase",
-        image: "",
-        shortDescription: "Full-stack RAG platform for AI-powered customer support.",
-        description:
-            "Full-stack SaaS MVP that turns company documents into a grounded AI support chatbot. " +
-            "Users can upload company knowledge, process documents into vector embeddings, " +
-            "ask questions using semantic search and RAG, receive source-grounded answers, " +
-            "and embed the chatbot on external websites. " +
-            "The product includes authentication, private storage, vector search, pricing tiers, " +
-            "feature gating, production deployment, and an embeddable public widget.",
-        stack:
-            "Next.js • React • TypeScript • Supabase • PostgreSQL • pgvector • OpenAI • RAG • Vercel",
-        github: "https://github.com/KlinovK/answerbase",
-        liveDemo: "https://answerbase-drab.vercel.app"
-    },
+/* ======================================================
+   PRODUCTION PROJECTS
+   ====================================================== */
+
+const productionProjects = [
 
     {
+        id: "radaro",
+        type: "Production",
         title: "Radaro — Real-Time Logistics Platform",
         shortTitle: "Radaro",
         image: "radaro-1.png",
-        shortDescription: "Real-time logistics and driver tracking platform.",
+
+        shortDescription:
+            "Production logistics and real-time driver tracking platform.",
+
         description:
-            "Uber-like driver tracking system for real-time job management, navigation, " +
-            "customer notifications, and production logistics workflows.",
+            "Production logistics platform for real-time job management, " +
+            "driver coordination, navigation, customer notifications, " +
+            "background synchronization, and operational workflows. " +
+            "Worked on native iOS architecture, real-time data flows, " +
+            "networking, production reliability, and application performance.",
+
         stack:
-            "Swift • RxSwift • MVVM • Alamofire • Promise • Bitrise",
+            "Swift • RxSwift • MVVM • Alamofire • Real-Time Data • Bitrise",
+
         github: "",
-        liveDemo: ""
+        liveDemo:
+            "https://apps.apple.com/au/app/radaro/id1131126957"
     },
 
+
     {
+        id: "lobstr",
+        type: "Production • Web3",
         title: "LOBSTR — Stellar Crypto Wallet",
         shortTitle: "LOBSTR",
         image: "lobstr-1.png",
-        shortDescription: "Secure Stellar blockchain wallet.",
+
+        shortDescription:
+            "Production Stellar wallet for assets, payments, and crypto transactions.",
+
         description:
-            "Secure cryptocurrency wallet for managing Stellar assets, tokens, payments, " +
-            "and blockchain transactions.",
+            "Production cryptocurrency wallet for the Stellar ecosystem. " +
+            "Worked on secure wallet flows, asset management, payments, " +
+            "blockchain transactions, networking, application architecture, " +
+            "security-sensitive state handling, and production reliability.",
+
         stack:
-            "Swift • Objective-C • VIPER • NSURLSession • Bitrise",
+            "Swift • Objective-C • VIPER • Networking • Keychain • Web3 • Bitrise",
+
         github: "",
-        liveDemo: ""
+        liveDemo:
+            "https://apps.apple.com/us/app/lobstr-wallet-buy-stellar-xlm/id1404357892"
     },
 
+
     {
-        title: "Coindisco — Crypto Market Explorer",
-        shortTitle: "Coindisco",
+        id: "coindisco",
+        type: "Production • Web3",
+        title: "CoinDisco — Crypto Application",
+        shortTitle: "CoinDisco",
         image: "coindisco-1.png",
-        shortDescription: "Cryptocurrency market explorer.",
+
+        shortDescription:
+            "Production crypto application for digital asset workflows.",
+
         description:
-            "Crypto market tracking application for monitoring digital assets, " +
-            "price movements, and market trends.",
+            "Production cryptocurrency application focused on digital assets, " +
+            "market information, secure transaction-related workflows, " +
+            "networking, persistence, and scalable native iOS architecture.",
+
         stack:
-            "Swift • MVVM • CoreData • Moya",
+            "Swift • MVVM • Core Data • Moya • Crypto APIs",
+
         github: "",
-        liveDemo: ""
-    },
+        liveDemo:
+            "https://apps.apple.com/us/app/coindisco-buy-sell-crypto/id6445888906"
+    }
+
+];
+
+
+/* ======================================================
+   PET PROJECTS
+   ====================================================== */
+
+const petProjects = [
 
     {
+        id: "realtime-tracker",
+        type: "Pet Project",
         title: "Realtime Price Tracker",
         shortTitle: "Realtime Tracker",
         image: "realtime-tracker-1.png",
-        shortDescription: "Live cryptocurrency market tracking.",
+
+        shortDescription:
+            "Live cryptocurrency market tracking with WebSockets.",
+
         description:
-            "High-performance cryptocurrency market tracker using WebSockets and Swift Concurrency.",
+            "High-performance cryptocurrency market tracker " +
+            "built to explore WebSocket streaming, " +
+            "Swift Concurrency, state management, and real-time UI updates.",
+
         stack:
-            "SwiftUI • WebSockets • async/await • TCA-inspired architecture",
+            "SwiftUI • WebSockets • async/await • TCA-inspired Architecture",
+
         github:
             "https://github.com/KlinovK/crypto-tracker",
+
         liveDemo: ""
     },
 
+
     {
+        id: "top-pizza",
+        type: "Pet Project",
         title: "TopPizza — Food Delivery App",
         shortTitle: "TopPizza",
         image: "",
-        shortDescription: "Swift-based food delivery demo app.",
+
+        shortDescription:
+            "UIKit food delivery demo application.",
+
         description:
-            "Native iOS food delivery demo focused on reusable UI, networking, and navigation.",
+            "Native iOS demo focused on UIKit, " +
+            "reusable UI components, networking, navigation, " +
+            "and conventional mobile application architecture.",
+
         stack:
             "Swift • UIKit • Networking",
+
         github:
             "https://github.com/KlinovK/TopPizza",
+
         liveDemo: ""
     },
 
+
     {
+        id: "blue-chips",
+        type: "Pet Project",
         title: "BlueChipsObserver — Market Analytics",
         shortTitle: "BlueChipsObserver",
         image: "",
-        shortDescription: "BTC & ETH real-time tracking app.",
+
+        shortDescription:
+            "BTC and ETH real-time market tracking app.",
+
         description:
-            "SwiftUI cryptocurrency monitoring application for observing BTC and ETH prices in real time.",
+            "SwiftUI cryptocurrency monitoring experiment " +
+            "for observing BTC and ETH market data " +
+            "and exploring real-time financial interfaces.",
+
         stack:
             "SwiftUI • Crypto APIs • Real-Time Data",
+
         github:
             "https://github.com/KlinovK/BlueChipsObserver",
+
         liveDemo: ""
     },
 
+
     {
+        id: "doc-reader",
+        type: "Pet Project",
         title: "DOCREADER — Document Scanner",
         shortTitle: "DOCREADER",
         image: "",
-        shortDescription: "Document scanning with VisionKit and SwiftData.",
+
+        shortDescription:
+            "Document scanning with VisionKit and SwiftData.",
+
         description:
-            "Native document scanning application using VisionKit and SwiftData.",
+            "Native SwiftUI document scanning experiment " +
+            "using VisionKit and SwiftData " +
+            "to explore modern Apple frameworks.",
+
         stack:
             "SwiftUI • VisionKit • SwiftData",
+
         github:
             "https://github.com/KlinovK/ai-doc-reader",
+
         liveDemo: ""
     },
 
+
     {
+        id: "speech-ai",
+        type: "AI Experiment",
         title: "SpeechToText + AI Chat",
         shortTitle: "SpeechToText + AI",
         image: "",
-        shortDescription: "Offline AI chat with speech recognition.",
+
+        shortDescription:
+            "Speech recognition combined with local LLM interaction.",
+
         description:
-            "Offline-focused AI chat combining Apple's Speech framework with Ollama LLM integration.",
+            "AI experiment combining Apple's Speech framework " +
+            "with local Ollama-powered LLM interaction " +
+            "to explore voice-driven and offline AI experiences.",
+
         stack:
-            "Swift • Speech Framework • Ollama • AI",
+            "Swift • Speech Framework • Ollama • Local AI",
+
         github:
             "https://github.com/KlinovK/TextToSpeech",
+
         liveDemo: ""
     },
 
+
     {
+        id: "live-beer",
+        type: "Architecture Experiment",
         title: "LiveBeer — TCA Architecture Demo",
         shortTitle: "LiveBeer",
         image: "",
-        shortDescription: "SwiftUI architecture demo.",
+
+        shortDescription:
+            "SwiftUI state-management architecture experiment.",
+
         description:
-            "SwiftUI demo focused on predictable state management and TCA-inspired architecture.",
+            "SwiftUI application built to explore " +
+            "predictable state management, reducer-based architecture, " +
+            "and TCA-inspired application design.",
+
         stack:
             "SwiftUI • TCA-inspired Architecture",
+
         github:
             "https://github.com/KlinovK/live-beer-test-task",
+
         liveDemo: ""
     },
 
+
     {
+        id: "task-tree",
+        type: "Concurrency Experiment",
         title: "TaskTree — Hierarchical Task System",
         shortTitle: "TaskTree",
         image: "",
-        shortDescription: "Task hierarchy with cancellation propagation.",
+
+        shortDescription:
+            "Structured concurrency and task hierarchy experiment.",
+
         description:
-            "Hierarchical task system demonstrating priority inheritance, " +
-            "cancellation propagation, and structured concurrency.",
+            "Technical experiment demonstrating hierarchical tasks, " +
+            "priority inheritance, cancellation propagation, " +
+            "and structured concurrency concepts.",
+
         stack:
-            "Swift • Concurrency • Task Management",
+            "Swift • Swift Concurrency • Task Management",
+
         github:
             "https://github.com/KlinovK/TaskTreeView",
+
         liveDemo: ""
     },
 
+
     {
+        id: "leetcode",
+        type: "Engineering Practice",
         title: "LeetCode Solutions",
         shortTitle: "LeetCode",
         image: "",
-        shortDescription: "Swift algorithm practice for interviews.",
+
+        shortDescription:
+            "Swift algorithms and data structures practice.",
+
         description:
-            "Collection of algorithm and data structure solutions written in Swift.",
+            "Collection of algorithm and data structure solutions " +
+            "implemented in Swift for technical interview practice " +
+            "and fundamental software engineering training.",
+
         stack:
             "Swift • Algorithms • Data Structures",
+
         github:
             "https://github.com/KlinovK/leetcode",
+
         liveDemo: ""
     },
 
+
     {
+        id: "linkedin-snippets",
+        type: "Engineering Notes",
         title: "LinkedIn Code Snippets",
         shortTitle: "LinkedIn Snippets",
         image: "",
-        shortDescription: "Swift and iOS technical snippets.",
+
+        shortDescription:
+            "Swift and iOS engineering examples and technical notes.",
+
         description:
-            "Technical Swift and iOS snippets for posts and engineering breakdowns.",
+            "Collection of Swift and iOS technical examples " +
+            "used for engineering breakdowns, architecture notes, " +
+            "and technical posts.",
+
         stack:
             "Swift • iOS • Architecture • Engineering Notes",
+
         github:
             "https://github.com/KlinovK/linkedin_posts",
+
         liveDemo: ""
     }
+
 ];
 
-const projectsTrack =
-    document.getElementById("projectsTrack");
+
+/* ======================================================
+   ALL PROJECTS
+   ====================================================== */
+
+const allProjects = [
+    ...productionProjects,
+    ...petProjects
+];
+
 
 const modal =
     document.getElementById("projectModal");
@@ -1132,82 +2020,128 @@ const modalLinks =
     document.getElementById("modalLinks");
 
 
-function createProjectCards() {
+/* ======================================================
+   RENDER PROJECTS
+   ====================================================== */
 
-    projectsTrack.innerHTML = projects.map((project, index) => `
+function createProjectCards(
+    projects,
+    trackId
+) {
 
-        <article
-            class="project-card"
-            tabindex="0"
-            role="button"
-            aria-label="Open ${escapeHTML(project.shortTitle)} project details"
-            onclick="openProject(${index})"
-            onkeydown="handleCardKey(event, ${index})"
-        >
+    const track =
+        document.getElementById(trackId);
 
-            <div class="project-image-container">
+    if (!track) {
+        return;
+    }
 
-                ${project.image ? `
 
-                    <img
-                        class="project-image"
-                        src="${escapeHTML(project.image)}"
-                        alt="${escapeHTML(project.shortTitle)} screenshot"
-                        onerror="showCardFallback(this)"
-                    >
+    track.innerHTML =
+        projects.map(project => `
 
-                    <div class="project-image-fallback">
-                        ${escapeHTML(project.shortTitle)}
-                    </div>
+            <article
+                class="project-card"
+                tabindex="0"
+                role="button"
 
-                ` : `
+                aria-label="Open ${escapeHTML(project.shortTitle)} project details"
 
-                    <div class="project-image-fallback no-image-placeholder">
+                onclick="openProject('${escapeHTML(project.id)}')"
 
-                        <div>
-                            <div class="placeholder-icon">⌘</div>
+                onkeydown="handleCardKey(event, '${escapeHTML(project.id)}')"
+            >
 
-                            <div>
-                                ${escapeHTML(project.shortTitle)}
-                            </div>
+                <div class="project-image-container">
 
-                            <div class="placeholder-label">
-                                Project Preview
-                            </div>
-                        </div>
+                    ${
+                        project.image
+                            ? `
 
-                    </div>
+                                <img
+                                    class="project-image"
+                                    src="${escapeHTML(project.image)}"
 
-                `}
+                                    alt="${escapeHTML(project.shortTitle)} screenshot"
 
-            </div>
+                                    onerror="showCardFallback(this)"
+                                >
 
-            <div class="project-content">
+                                <div class="project-image-fallback">
+                                    ${escapeHTML(project.shortTitle)}
+                                </div>
 
-                <h3>
-                    ${escapeHTML(project.shortTitle)}
-                </h3>
+                            `
+                            : `
 
-                <p class="project-description">
-                    ${escapeHTML(project.shortDescription)}
-                </p>
+                                <div class="project-image-fallback no-image-placeholder">
 
-                <p class="project-stack">
-                    ${escapeHTML(project.stack)}
-                </p>
+                                    <div>
 
-                <div class="project-view">
-                    <span>View Project</span>
-                    <span>→</span>
+                                        <div class="placeholder-icon">
+                                            ⌘
+                                        </div>
+
+                                        <div>
+                                            ${escapeHTML(project.shortTitle)}
+                                        </div>
+
+                                        <div class="placeholder-label">
+                                            Project Preview
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            `
+                    }
+
                 </div>
 
-            </div>
 
-        </article>
+                <div class="project-content">
 
-    `).join("");
+                    <div class="project-type">
+                        ${escapeHTML(project.type)}
+                    </div>
+
+                    <h3>
+                        ${escapeHTML(project.shortTitle)}
+                    </h3>
+
+                    <p class="project-description">
+                        ${escapeHTML(project.shortDescription)}
+                    </p>
+
+                    <p class="project-stack">
+                        ${escapeHTML(project.stack)}
+                    </p>
+
+                    <div class="project-view">
+
+                        <span>
+                            View Project
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        `).join("");
+
 }
 
+
+/* ======================================================
+   HELPERS
+   ====================================================== */
 
 function escapeHTML(value) {
 
@@ -1222,21 +2156,36 @@ function escapeHTML(value) {
 
 function showCardFallback(image) {
 
-    image.style.display = "none";
+    image.style.display =
+        "none";
 
     const fallback =
         image.nextElementSibling;
 
     if (fallback) {
-        fallback.style.display = "flex";
+
+        fallback.style.display =
+            "flex";
+
     }
+
 }
 
 
-function scrollProjects(direction) {
+function scrollProjects(
+    trackId,
+    direction
+) {
+
+    const track =
+        document.getElementById(trackId);
+
+    if (!track) {
+        return;
+    }
 
     const card =
-        projectsTrack.querySelector(".project-card");
+        track.querySelector(".project-card");
 
     if (!card) {
         return;
@@ -1247,17 +2196,35 @@ function scrollProjects(direction) {
     const cardWidth =
         card.offsetWidth + gap;
 
-    projectsTrack.scrollBy({
-        left: cardWidth * direction,
-        behavior: "smooth"
+    track.scrollBy({
+
+        left:
+            cardWidth * direction,
+
+        behavior:
+            "smooth"
+
     });
+
 }
 
 
-function openProject(index) {
+/* ======================================================
+   MODAL
+   ====================================================== */
+
+function openProject(projectId) {
 
     const project =
-        projects[index];
+        allProjects.find(
+            item =>
+                item.id === projectId
+        );
+
+    if (!project) {
+        return;
+    }
+
 
     modalTitle.textContent =
         project.title;
@@ -1285,21 +2252,26 @@ function openProject(index) {
         modalImage.alt =
             `${project.shortTitle} project preview`;
 
-        modalImage.onerror = function() {
 
-            modalImage.style.display =
-                "none";
+        modalImage.onerror =
+            function() {
 
-            modalImageFallback.textContent =
-                project.shortTitle;
+                modalImage.style.display =
+                    "none";
 
-            modalImageFallback.style.display =
-                "flex";
-        };
+                modalImageFallback.textContent =
+                    project.shortTitle;
+
+                modalImageFallback.style.display =
+                    "flex";
+
+            };
 
     } else {
 
-        modalImage.removeAttribute("src");
+        modalImage.removeAttribute(
+            "src"
+        );
 
         modalImage.style.display =
             "none";
@@ -1309,15 +2281,15 @@ function openProject(index) {
 
         modalImageFallback.style.display =
             "flex";
+
     }
 
 
     /* LINKS */
 
-    modalLinks.innerHTML = "";
+    modalLinks.innerHTML =
+        "";
 
-
-    /* LIVE DEMO */
 
     if (project.liveDemo) {
 
@@ -1337,7 +2309,9 @@ function openProject(index) {
             "modal-link";
 
         demoLink.textContent =
-            "Live Demo";
+            project.type.includes("Production")
+                ? "View App"
+                : "Live Demo";
 
         demoLink.addEventListener(
             "click",
@@ -1349,10 +2323,9 @@ function openProject(index) {
         modalLinks.appendChild(
             demoLink
         );
+
     }
 
-
-    /* GITHUB */
 
     if (project.github) {
 
@@ -1386,38 +2359,54 @@ function openProject(index) {
         modalLinks.appendChild(
             githubLink
         );
+
     }
 
 
-    modal.classList.add("active");
+    modal.classList.add(
+        "active"
+    );
 
     document.body.style.overflow =
         "hidden";
 
+
     document
         .querySelector(".modal-close")
         .focus();
+
 }
 
 
 function closeProject() {
 
-    modal.classList.remove("active");
+    modal.classList.remove(
+        "active"
+    );
 
     document.body.style.overflow =
         "";
+
 }
 
 
 function closeProjectFromBackground(event) {
 
-    if (event.target === modal) {
+    if (
+        event.target === modal
+    ) {
+
         closeProject();
+
     }
+
 }
 
 
-function handleCardKey(event, index) {
+function handleCardKey(
+    event,
+    projectId
+) {
 
     if (
         event.key === "Enter" ||
@@ -1426,8 +2415,12 @@ function handleCardKey(event, index) {
 
         event.preventDefault();
 
-        openProject(index);
+        openProject(
+            projectId
+        );
+
     }
+
 }
 
 
@@ -1439,13 +2432,29 @@ document.addEventListener(
             event.key === "Escape" &&
             modal.classList.contains("active")
         ) {
+
             closeProject();
+
         }
+
     }
 );
 
 
-createProjectCards();
+/* ======================================================
+   INITIAL RENDER
+   ====================================================== */
+
+createProjectCards(
+    productionProjects,
+    "productionProjectsTrack"
+);
+
+createProjectCards(
+    petProjects,
+    "petProjectsTrack"
+);
+
 </script>
 
 </body>
