@@ -879,8 +879,6 @@ footer {
         Experience
     </h2>
 
-    <!-- CONTRACTOR -->
-
     <div class="card">
 
         <h3>
@@ -961,8 +959,6 @@ footer {
         </div>
 
     </div>
-
-    <!-- ULTRA STELLAR -->
 
     <div class="card">
 
@@ -1624,49 +1620,28 @@ const petProjects = [
     },
 
     {
-        id: "leetcode",
+        id: "linkedin-leetcode",
         type: "Engineering Practice",
-        title: "LeetCode Solutions",
-        shortTitle: "LeetCode",
+        title: "Swift Engineering Lab — LeetCode & Technical Notes",
+        shortTitle: "Swift Engineering Lab",
         image: "",
 
         shortDescription:
-            "Swift algorithms and data structures practice.",
+            "Swift algorithms, concurrency experiments, and iOS engineering notes.",
 
         description:
-            "Collection of algorithm and data structure solutions " +
-            "implemented in Swift for technical interview practice " +
-            "and fundamental software engineering training.",
+            "A growing collection of Swift engineering exercises combining " +
+            "LeetCode algorithm practice with practical iOS and Swift examples. " +
+            "The repository includes data structures and algorithms, Swift Concurrency, " +
+            "Sendable, actors, cancellation, architecture, performance, " +
+            "and other engineering topics used for technical study and LinkedIn posts. " +
+            "Examples are structured as normal Swift files with runnable Playground blocks.",
 
         stack:
-            "Swift • Algorithms • Data Structures",
+            "Swift • Algorithms • Data Structures • Swift Concurrency • iOS Architecture",
 
         github:
-            "https://github.com/KlinovK/leetcode",
-
-        liveDemo: ""
-    },
-
-    {
-        id: "linkedin-snippets",
-        type: "Engineering Notes",
-        title: "LinkedIn Code Snippets",
-        shortTitle: "LinkedIn Snippets",
-        image: "",
-
-        shortDescription:
-            "Swift and iOS engineering examples and technical notes.",
-
-        description:
-            "Collection of Swift and iOS technical examples " +
-            "used for engineering breakdowns, architecture notes, " +
-            "and technical posts.",
-
-        stack:
-            "Swift • iOS • Architecture • Engineering Notes",
-
-        github:
-            "https://github.com/KlinovK/linkedin_posts",
+            "https://github.com/KlinovK/linkedin-leetcode",
 
         liveDemo: ""
     }
@@ -1901,8 +1876,6 @@ function openProject(projectId) {
     modalStack.textContent =
         project.stack;
 
-    /* IMAGE */
-
     if (project.image) {
 
         modalImage.style.display =
@@ -1947,8 +1920,6 @@ function openProject(projectId) {
             "flex";
 
     }
-
-    /* LINKS */
 
     modalLinks.innerHTML =
         "";
