@@ -212,27 +212,8 @@ a:hover {
     margin-bottom: 0;
 }
 
-.project-navigation {
-    display: flex;
-    gap: 10px;
-}
 
-.project-navigation button {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.06);
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.25s;
-}
 
-.project-navigation button:hover {
-    background: rgba(0,245,255,0.15);
-    border-color: #00f5ff;
-}
 
 .projects-track {
     display: flex;
@@ -272,6 +253,7 @@ a:hover {
         0 0 30px rgba(0,245,255,0.12);
 }
 
+.projects-track:focus-visible,
 .project-card:focus-visible {
     outline: 2px solid #00f5ff;
     outline-offset: 4px;
@@ -383,11 +365,27 @@ a:hover {
 
 /* AI CASE STUDY */
 
-.ai-project {
+.ai-projects-section {
+    max-width: 1400px;
+}
+
+.ai-projects-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 30px;
-    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.ai-project {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+.ai-project-body {
+    min-width: 0;
+    flex: 1;
 }
 
 .ai-project h3 {
@@ -408,9 +406,10 @@ a:hover {
 
 .ai-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
-    min-width: 160px;
+    margin-top: 24px;
 }
 
 .ai-link {
@@ -439,6 +438,125 @@ a:hover {
     text-decoration: none;
     transform: translateY(-1px);
     box-shadow: 0 10px 30px rgba(0,245,255,0.12);
+}
+
+.ai-project .answerbase-visual {
+    display: block;
+    margin-top: 26px;
+    border-radius: 15px;
+}
+
+.ai-project .answerbase-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+/* CRYPTO PORTFOLIO ADVISOR CASE STUDY */
+
+#crypto-portfolio-advisor {
+    scroll-margin-top: 24px;
+}
+
+#crypto-portfolio-advisor .crypto-subtitle {
+    color: #00f5ff;
+    margin-bottom: 18px;
+}
+
+#crypto-portfolio-advisor h4 {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+#crypto-portfolio-advisor .crypto-highlights {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+}
+
+#crypto-portfolio-advisor .crypto-highlights li + li {
+    margin-top: 10px;
+}
+
+#crypto-portfolio-advisor .crypto-highlights strong {
+    color: white;
+}
+
+#crypto-portfolio-advisor .crypto-engineering {
+    margin-bottom: 18px;
+}
+
+#crypto-portfolio-advisor summary {
+    cursor: pointer;
+    color: #00f5ff;
+    padding-block: 8px;
+}
+
+#crypto-portfolio-advisor summary h4 {
+    display: inline;
+}
+
+#crypto-portfolio-advisor .crypto-engineering[open] summary {
+    margin-bottom: 12px;
+}
+
+#crypto-portfolio-advisor .crypto-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+#crypto-portfolio-advisor .crypto-gallery a {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 15px;
+}
+
+#crypto-portfolio-advisor .crypto-gallery img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+#crypto-portfolio-advisor figcaption {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.ai-project a:focus-visible,
+#crypto-portfolio-advisor summary:focus-visible {
+    outline: 2px solid #00f5ff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+    #crypto-portfolio-advisor .crypto-gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        padding: 6px 6px 14px;
+    }
+
+    #crypto-portfolio-advisor .crypto-gallery figure {
+        flex: 0 0 min(240px, 85%);
+        scroll-snap-align: start;
+    }
+
+    #crypto-portfolio-advisor .crypto-gallery img {
+        max-height: 420px;
+    }
 }
 
 /* EXPERIENCE */
@@ -632,9 +750,6 @@ footer {
         flex-basis: 85vw;
     }
 
-    .project-navigation {
-        display: none;
-    }
 
     .project-modal {
         padding: 15px;
@@ -648,8 +763,8 @@ footer {
         aspect-ratio: 4 / 3;
     }
 
-    .ai-project {
-        grid-template-columns: 1fr;
+    .ai-projects-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .ai-links {
@@ -734,36 +849,171 @@ footer {
                 </h2>
             </div>
 
-            <div class="project-navigation">
-
-                <button
-                    type="button"
-                    onclick="scrollProjects('productionProjectsTrack', -1)"
-                    aria-label="Previous production projects"
-                >
-                    ←
-                </button>
-
-                <button
-                    type="button"
-                    onclick="scrollProjects('productionProjectsTrack', 1)"
-                    aria-label="Next production projects"
-                >
-                    →
-                </button>
-
-            </div>
 
         </div>
 
         <div
             class="projects-track"
             id="productionProjectsTrack"
+            tabindex="0"
+            role="region"
+            aria-label="Production projects — horizontally scrollable"
         ></div>
 
     </div>
 
 </div>
+
+<!-- AI CASE STUDY -->
+
+<section class="ai-projects-section">
+
+    <h2>
+        AI Product Engineering
+    </h2>
+
+    <p class="section-intro">
+        Applied AI engineering projects that extend my mobile background
+        into LLM-powered products, backend services, retrieval systems,
+        and end-to-end product delivery.
+    </p>
+
+    <div class="ai-projects-grid">
+
+    <article class="card ai-project" id="crypto-portfolio-advisor" aria-labelledby="crypto-portfolio-advisor-title">
+
+        <div class="ai-project-body">
+
+        <div class="project-type">iOS • FinTech • AI</div>
+        <h3 id="crypto-portfolio-advisor-title">Crypto Portfolio Advisor</h3>
+        <p class="crypto-subtitle">Production-style iOS, backend &amp; AI portfolio analysis</p>
+
+        <p class="ai-project-description">Native iOS crypto portfolio analysis combining live market data, deterministic risk calculations, and validated AI recommendations—with immutable history and no trade execution.</p>
+
+        <p class="ai-project-description">Built an end-to-end portfolio analysis application with SwiftUI and TCA, backed by FastAPI and PostgreSQL. Users capture portfolio balances and constraints, analyze live CoinGecko market data, and revisit completed analyses through immutable SwiftData history.</p>
+
+        <details class="crypto-engineering">
+        <summary><h4>Engineering highlights</h4></summary>
+        <ul class="crypto-highlights">
+            <li><strong>Native iOS architecture</strong> — Swift 6, SwiftUI, TCA, SwiftData, and Structured Concurrency for explicit state management, asynchronous workflows, and local persistence.</li>
+            <li><strong>Validated AI integration</strong> — deterministic portfolio and risk logic remains separate from AI. OpenAI Structured Outputs are treated as untrusted proposals and validated by RiskEngine before reaching the app.</li>
+            <li><strong>Financial correctness</strong> — Decimal financial boundaries and immutable analysis snapshots preserve precision and the exact inputs behind each historical result.</li>
+            <li><strong>Reliable execution</strong> — durable PostgreSQL idempotency, graceful AI fallback, and explicit timeout/error handling support retries and provider failures.</li>
+            <li><strong>Delivery and verification</strong> — Render and Neon deployment; full Release E2E workflow verified; 108 passing iOS tests and a comprehensive backend test suite.</li>
+        </ul>
+        </details>
+
+        <p class="ai-project-description">Portfolio engineering project. Analysis and recommendations only; no trade execution.</p>
+        <p class="ai-project-stack">Swift 6 • SwiftUI • TCA • SwiftData • FastAPI • PostgreSQL • OpenAI Structured Outputs</p>
+        <p class="ai-project-stack">Structured Concurrency • CoinGecko • Render • Neon</p>
+
+        <div class="crypto-gallery" role="group" aria-label="Crypto Portfolio Advisor screenshots; open images in a new tab to enlarge">
+            <figure>
+                <a href="crypto-portfolio-advisor-analysis-details.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge analysis details screenshot (opens in a new tab)">
+                    <img src="crypto-portfolio-advisor-analysis-details.png" width="1206" height="2622" loading="lazy" alt="Analysis Details showing AI-assisted analysis, moderate risk, and recommended portfolio actions.">
+                </a>
+                <figcaption>AI-assisted recommendations validated by deterministic risk rules.</figcaption>
+            </figure>
+            <figure>
+                <a href="crypto-portfolio-advisor-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge dashboard screenshot (opens in a new tab)">
+                    <img src="crypto-portfolio-advisor-dashboard.png" width="1206" height="2622" loading="lazy" alt="Dashboard showing an ETH balance and trading constraints including risk tolerance and a minimum stable reserve.">
+                </a>
+                <figcaption>Portfolio balances and user-defined analysis constraints.</figcaption>
+            </figure>
+            <figure>
+                <a href="crypto-portfolio-advisor-history.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge history screenshot (opens in a new tab)">
+                    <img src="crypto-portfolio-advisor-history.png" width="1206" height="2622" loading="lazy" alt="History listing saved analyses with dates, risk levels, portfolio values, and action counts.">
+                </a>
+                <figcaption>Immutable completed analyses saved locally with SwiftData.</figcaption>
+            </figure>
+        </div>
+
+        </div>
+
+        <div class="ai-links">
+            <a class="ai-link" href="https://github.com/KlinovK/CryptoPortfolioAdvisor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+
+    </article>
+
+    <article class="card ai-project" aria-labelledby="answerbase-title">
+
+        <div class="ai-project-body">
+
+            <h3 id="answerbase-title">
+                Answerbase — Embeddable AI Support Platform
+            </h3>
+
+            <p class="ai-project-description">
+
+                Full-stack SaaS MVP that turns company documents
+                into a grounded AI support chatbot.
+
+                Users can upload company knowledge,
+                process documents into vector embeddings,
+                query them through semantic search and RAG,
+                receive source-grounded answers,
+                and embed the chatbot on external websites.
+
+            </p>
+
+            <p class="ai-project-description">
+
+                Built end-to-end including authentication,
+                database architecture,
+                private document storage,
+                document processing,
+                vector search,
+                AI answer generation,
+                public widget integration,
+                pricing tiers,
+                feature gating,
+                deployment,
+                and production debugging.
+
+            </p>
+
+            <p class="ai-project-stack">
+
+                Next.js • TypeScript • Supabase Auth • PostgreSQL •
+                pgvector • RLS • Supabase Storage •
+                OpenAI Embeddings • RAG • Server Actions • Vercel
+
+            </p>
+
+            <a class="answerbase-visual" href="answerbase-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Answerbase screenshot (opens in a new tab)">
+                <img src="answerbase-dashboard.png" width="3420" height="2146" loading="lazy" alt="Answerbase AI product dashboard">
+            </a>
+
+        </div>
+
+        <div class="ai-links">
+
+            <a
+                class="ai-link"
+                href="https://answerbase-drab.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Live Demo
+            </a>
+
+            <a
+                class="ai-link secondary"
+                href="https://github.com/KlinovK/answerbase"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </article>
+
+    </div>
+
+</section>
 
 <!-- ABOUT -->
 
@@ -886,13 +1136,13 @@ footer {
         </h3>
 
         <p class="experience-date">
-            May 2025 – Present • Remote
+            May 2025 – August 2026 • Remote
         </p>
 
         <div class="experience-block">
 
             <p>
-                I work on production iOS features across FinTech and logistics products,
+                I worked on production iOS features across FinTech and logistics products,
                 taking engineering tasks from requirements and technical design
                 through implementation, testing, release, and post-release improvements.
             </p>
@@ -948,10 +1198,10 @@ footer {
                     AI-Assisted Engineering
                 </strong><br>
 
-                • Use coding agents for implementation,
+                • Used coding agents for implementation,
                 refactoring, debugging, testing, and documentation<br>
 
-                • Validate AI-generated changes through tests,
+                • Validated AI-generated changes through tests,
                 code review, and manual engineering analysis
 
             </p>
@@ -1073,93 +1323,6 @@ footer {
 
 </section>
 
-<!-- AI CASE STUDY -->
-
-<section>
-
-    <h2>
-        AI Product Engineering
-    </h2>
-
-    <p class="section-intro">
-        Applied AI engineering projects that extend my mobile background
-        into LLM-powered products, backend services, retrieval systems,
-        and end-to-end product delivery.
-    </p>
-
-    <div class="card ai-project">
-
-        <div>
-
-            <h3>
-                Answerbase — Embeddable AI Support Platform
-            </h3>
-
-            <p class="ai-project-description">
-
-                Full-stack SaaS MVP that turns company documents
-                into a grounded AI support chatbot.
-
-                Users can upload company knowledge,
-                process documents into vector embeddings,
-                query them through semantic search and RAG,
-                receive source-grounded answers,
-                and embed the chatbot on external websites.
-
-            </p>
-
-            <p class="ai-project-description">
-
-                Built end-to-end including authentication,
-                database architecture,
-                private document storage,
-                document processing,
-                vector search,
-                AI answer generation,
-                public widget integration,
-                pricing tiers,
-                feature gating,
-                deployment,
-                and production debugging.
-
-            </p>
-
-            <p class="ai-project-stack">
-
-                Next.js • TypeScript • Supabase Auth • PostgreSQL •
-                pgvector • RLS • Supabase Storage •
-                OpenAI Embeddings • RAG • Server Actions • Vercel
-
-            </p>
-
-        </div>
-
-        <div class="ai-links">
-
-            <a
-                class="ai-link"
-                href="https://answerbase-drab.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Live Demo
-            </a>
-
-            <a
-                class="ai-link secondary"
-                href="https://github.com/KlinovK/answerbase"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
 <!-- PET PROJECTS -->
 
 <section class="projects-section">
@@ -1172,25 +1335,6 @@ footer {
             </h2>
         </div>
 
-        <div class="project-navigation">
-
-            <button
-                type="button"
-                onclick="scrollProjects('petProjectsTrack', -1)"
-                aria-label="Previous pet projects"
-            >
-                ←
-            </button>
-
-            <button
-                type="button"
-                onclick="scrollProjects('petProjectsTrack', 1)"
-                aria-label="Next pet projects"
-            >
-                →
-            </button>
-
-        </div>
 
     </div>
 
@@ -1209,6 +1353,9 @@ footer {
     <div
         class="projects-track"
         id="petProjectsTrack"
+            tabindex="0"
+            role="region"
+            aria-label="Pet projects and engineering experiments — horizontally scrollable"
     ></div>
 
 </section>
@@ -1439,11 +1586,19 @@ const productionProjects = [
 
         liveDemo:
             "https://apps.apple.com/us/app/coindisco-buy-sell-crypto/id6445888906"
-    },
+    }
+
+];
+
+/* ======================================================
+   PET PROJECTS
+   ====================================================== */
+
+const petProjects = [
 
     {
         id: "realtime-tracker",
-        type: "Production-Grade • Web3",
+        type: "Engineering Experiment • Web3",
         title: "Realtime Price Tracker",
         shortTitle: "Realtime Tracker",
         image: "realtime-tracker-1.png",
@@ -1465,15 +1620,7 @@ const productionProjects = [
             "https://github.com/KlinovK/crypto-tracker",
 
         liveDemo: ""
-    }
-
-];
-
-/* ======================================================
-   PET PROJECTS
-   ====================================================== */
-
-const petProjects = [
+    },
 
     {
         id: "top-pizza",
@@ -1815,39 +1962,6 @@ function showCardFallback(image) {
         fallback.style.display =
             "flex";
     }
-
-}
-
-function scrollProjects(
-    trackId,
-    direction
-) {
-
-    const track =
-        document.getElementById(trackId);
-
-    if (!track) {
-        return;
-    }
-
-    const card =
-        track.querySelector(".project-card");
-
-    if (!card) {
-        return;
-    }
-
-    const gap = 24;
-
-    const cardWidth =
-        card.offsetWidth + gap;
-
-    track.scrollBy({
-        left:
-            cardWidth * direction,
-        behavior:
-            "smooth"
-    });
 
 }
 
