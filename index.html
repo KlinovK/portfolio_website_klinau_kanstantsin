@@ -451,6 +451,30 @@ a:hover {
     margin-bottom: 18px;
 }
 
+#crypto-portfolio-advisor .crypto-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#crypto-portfolio-advisor .crypto-title-row h3 {
+    margin-bottom: 0;
+}
+
+#crypto-portfolio-advisor .crypto-status {
+    display: inline-flex;
+    padding: 4px 9px;
+    border: 1px solid rgba(0,245,255,0.28);
+    border-radius: 999px;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 #crypto-portfolio-advisor h4 {
     margin-bottom: 12px;
     font-size: 1rem;
@@ -487,6 +511,10 @@ a:hover {
 
 #crypto-portfolio-advisor .crypto-engineering[open] summary {
     margin-bottom: 12px;
+}
+
+#crypto-portfolio-advisor .crypto-scope h4:not(:first-child) {
+    margin-top: 20px;
 }
 
 .ai-project a:focus-visible,
@@ -810,8 +838,8 @@ footer {
 
     <p class="section-intro">
         Product engineering projects that extend my mobile background
-        into AI-assisted systems, backend services, data pipelines,
-        and end-to-end product delivery.
+        into AI-assisted systems, backend architecture, data pipelines,
+        and disciplined product development.
     </p>
 
     <div class="ai-projects-grid">
@@ -821,25 +849,36 @@ footer {
         <div class="ai-project-body">
 
         <div class="project-type">FinTech • AI • Product Architecture</div>
-        <h3 id="crypto-portfolio-advisor-title">Crypto Portfolio Advisor</h3>
+        <div class="crypto-title-row">
+            <h3 id="crypto-portfolio-advisor-title">Crypto Portfolio Advisor</h3>
+            <span class="crypto-status">In Development</span>
+        </div>
         <p class="crypto-subtitle">AI-assisted crypto trading decision support</p>
 
-        <p class="ai-project-description">An in-development decision-support platform for spot crypto portfolio management and swing trading. It is designed to evaluate portfolio context, market conditions, risk, and an existing trading plan before a trader decides whether to act.</p>
+        <p class="ai-project-description">An AI-assisted crypto portfolio decision-support platform being developed for spot swing trading. The planned system combines deterministic portfolio and risk management, systematic strategy research, and AI-assisted analysis to produce explainable trading plans.</p>
 
-        <p class="ai-project-description">The product treats the portfolio—not an isolated signal—as the unit of decision-making. Deterministic calculations and safety constraints come before AI reasoning, <strong>NO_TRADE</strong> remains a first-class outcome, and execution stays manual.</p>
+        <p class="ai-project-description">Development follows a structured AI-assisted workflow with explicit engineering standards, architecture decision records, scoped implementation plans when appropriate, and quality reviews.</p>
 
         <details class="crypto-engineering">
-        <summary><h4>Product direction</h4></summary>
-        <ul class="crypto-highlights">
-            <li><strong>Portfolio-aware guidance</strong> — planned support for buying, adding, holding, reducing, selling, and managing limit-order plans.</li>
-            <li><strong>Deterministic risk controls</strong> — position sizing, risk/reward checks, concentration limits, drawdown protection, and correlated-exposure awareness remain outside the AI layer.</li>
-            <li><strong>Evidence before claims</strong> — strategy assumptions are intended to be researched and backtested before performance claims are made.</li>
-            <li><strong>Multi-client platform</strong> — a client-independent backend is planned to support web, iOS, and Telegram experiences.</li>
-            <li><strong>Safety by design</strong> — stale or incomplete inputs fail safely, actionable trades require an invalidation case, and V1 does not execute trades.</li>
-        </ul>
-        </details>
+        <summary><h4>Current &amp; planned scope</h4></summary>
+        <div class="crypto-scope">
+            <h4>Current</h4>
+            <ul class="crypto-highlights">
+                <li>Product and trading specifications</li>
+                <li>AI-assisted engineering protocol</li>
+                <li>Repository documentation and engineering standards</li>
+            </ul>
 
-        <p class="ai-project-stack">Risk Management • Strategy Research • Backtesting • AI Reasoning • Multi-client Architecture</p>
+            <h4>Planned</h4>
+            <ul class="crypto-highlights">
+                <li>Python backend with deterministic Portfolio and Risk Engines</li>
+                <li>Strategy Research and Backtesting</li>
+                <li>AI Advisor and Telegram assistant</li>
+                <li>Web and iOS applications</li>
+                <li>Web3 intelligence</li>
+            </ul>
+        </div>
+        </details>
 
         </div>
 
