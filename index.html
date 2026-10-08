@@ -440,21 +440,6 @@ a:hover {
     box-shadow: 0 10px 30px rgba(0,245,255,0.12);
 }
 
-.ai-project .answerbase-visual {
-    display: block;
-    margin-top: 26px;
-    border-radius: 15px;
-}
-
-.ai-project .answerbase-visual img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-radius: 15px;
-}
-
 /* CRYPTO PORTFOLIO ADVISOR CASE STUDY */
 
 #crypto-portfolio-advisor {
@@ -504,59 +489,10 @@ a:hover {
     margin-bottom: 12px;
 }
 
-#crypto-portfolio-advisor .crypto-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 26px;
-}
-
-#crypto-portfolio-advisor .crypto-gallery a {
-    display: block;
-    width: fit-content;
-    margin-inline: auto;
-    border-radius: 15px;
-}
-
-#crypto-portfolio-advisor .crypto-gallery img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 220px;
-    border-radius: 15px;
-    object-fit: contain;
-}
-
-#crypto-portfolio-advisor figcaption {
-    margin-top: 12px;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
-
 .ai-project a:focus-visible,
 #crypto-portfolio-advisor summary:focus-visible {
     outline: 2px solid #00f5ff;
     outline-offset: 4px;
-}
-
-@media (max-width: 700px) {
-    #crypto-portfolio-advisor .crypto-gallery {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x proximity;
-        padding: 6px 6px 14px;
-    }
-
-    #crypto-portfolio-advisor .crypto-gallery figure {
-        flex: 0 0 min(240px, 85%);
-        scroll-snap-align: start;
-    }
-
-    #crypto-portfolio-advisor .crypto-gallery img {
-        max-height: 420px;
-    }
 }
 
 /* EXPERIENCE */
@@ -873,8 +809,8 @@ footer {
     </h2>
 
     <p class="section-intro">
-        Applied AI engineering projects that extend my mobile background
-        into LLM-powered products, backend services, retrieval systems,
+        Product engineering projects that extend my mobile background
+        into AI-assisted systems, backend services, data pipelines,
         and end-to-end product delivery.
     </p>
 
@@ -884,106 +820,63 @@ footer {
 
         <div class="ai-project-body">
 
-        <div class="project-type">iOS • FinTech • AI</div>
+        <div class="project-type">FinTech • AI • Product Architecture</div>
         <h3 id="crypto-portfolio-advisor-title">Crypto Portfolio Advisor</h3>
-        <p class="crypto-subtitle">Production-style iOS, backend &amp; AI portfolio analysis</p>
+        <p class="crypto-subtitle">AI-assisted crypto trading decision support</p>
 
-        <p class="ai-project-description">Native iOS crypto portfolio analysis combining live market data, deterministic risk calculations, and validated AI recommendations—with immutable history and no trade execution.</p>
+        <p class="ai-project-description">An in-development decision-support platform for spot crypto portfolio management and swing trading. It is designed to evaluate portfolio context, market conditions, risk, and an existing trading plan before a trader decides whether to act.</p>
 
-        <p class="ai-project-description">Built an end-to-end portfolio analysis application with SwiftUI and TCA, backed by FastAPI and PostgreSQL. Users capture portfolio balances and constraints, analyze live CoinGecko market data, and revisit completed analyses through immutable SwiftData history.</p>
+        <p class="ai-project-description">The product treats the portfolio—not an isolated signal—as the unit of decision-making. Deterministic calculations and safety constraints come before AI reasoning, <strong>NO_TRADE</strong> remains a first-class outcome, and execution stays manual.</p>
 
         <details class="crypto-engineering">
-        <summary><h4>Engineering highlights</h4></summary>
+        <summary><h4>Product direction</h4></summary>
         <ul class="crypto-highlights">
-            <li><strong>Native iOS architecture</strong> — Swift 6, SwiftUI, TCA, SwiftData, and Structured Concurrency for explicit state management, asynchronous workflows, and local persistence.</li>
-            <li><strong>Validated AI integration</strong> — deterministic portfolio and risk logic remains separate from AI. OpenAI Structured Outputs are treated as untrusted proposals and validated by RiskEngine before reaching the app.</li>
-            <li><strong>Financial correctness</strong> — Decimal financial boundaries and immutable analysis snapshots preserve precision and the exact inputs behind each historical result.</li>
-            <li><strong>Reliable execution</strong> — durable PostgreSQL idempotency, graceful AI fallback, and explicit timeout/error handling support retries and provider failures.</li>
-            <li><strong>Delivery and verification</strong> — Render and Neon deployment; full Release E2E workflow verified; 108 passing iOS tests and a comprehensive backend test suite.</li>
+            <li><strong>Portfolio-aware guidance</strong> — planned support for buying, adding, holding, reducing, selling, and managing limit-order plans.</li>
+            <li><strong>Deterministic risk controls</strong> — position sizing, risk/reward checks, concentration limits, drawdown protection, and correlated-exposure awareness remain outside the AI layer.</li>
+            <li><strong>Evidence before claims</strong> — strategy assumptions are intended to be researched and backtested before performance claims are made.</li>
+            <li><strong>Multi-client platform</strong> — a client-independent backend is planned to support web, iOS, and Telegram experiences.</li>
+            <li><strong>Safety by design</strong> — stale or incomplete inputs fail safely, actionable trades require an invalidation case, and V1 does not execute trades.</li>
         </ul>
         </details>
 
-        <p class="ai-project-description">Portfolio engineering project. Analysis and recommendations only; no trade execution.</p>
-        <p class="ai-project-stack">Swift 6 • SwiftUI • TCA • SwiftData • FastAPI • PostgreSQL • OpenAI Structured Outputs</p>
-        <p class="ai-project-stack">Structured Concurrency • CoinGecko • Render • Neon</p>
-
-        <div class="crypto-gallery" role="group" aria-label="Crypto Portfolio Advisor screenshots; open images in a new tab to enlarge">
-            <figure>
-                <a href="crypto-portfolio-advisor-analysis-details.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge analysis details screenshot (opens in a new tab)">
-                    <img src="crypto-portfolio-advisor-analysis-details.png" width="1206" height="2622" loading="lazy" alt="Analysis Details showing AI-assisted analysis, moderate risk, and recommended portfolio actions.">
-                </a>
-                <figcaption>AI-assisted recommendations validated by deterministic risk rules.</figcaption>
-            </figure>
-            <figure>
-                <a href="crypto-portfolio-advisor-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge dashboard screenshot (opens in a new tab)">
-                    <img src="crypto-portfolio-advisor-dashboard.png" width="1206" height="2622" loading="lazy" alt="Dashboard showing an ETH balance and trading constraints including risk tolerance and a minimum stable reserve.">
-                </a>
-                <figcaption>Portfolio balances and user-defined analysis constraints.</figcaption>
-            </figure>
-            <figure>
-                <a href="crypto-portfolio-advisor-history.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge history screenshot (opens in a new tab)">
-                    <img src="crypto-portfolio-advisor-history.png" width="1206" height="2622" loading="lazy" alt="History listing saved analyses with dates, risk levels, portfolio values, and action counts.">
-                </a>
-                <figcaption>Immutable completed analyses saved locally with SwiftData.</figcaption>
-            </figure>
-        </div>
+        <p class="ai-project-stack">Risk Management • Strategy Research • Backtesting • AI Reasoning • Multi-client Architecture</p>
 
         </div>
 
         <div class="ai-links">
-            <a class="ai-link" href="https://github.com/KlinovK/CryptoPortfolioAdvisor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a class="ai-link" href="https://github.com/KlinovK/crypto-portfolio-advisor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
 
     </article>
 
-    <article class="card ai-project" aria-labelledby="answerbase-title">
+    <article class="card ai-project" aria-labelledby="job-scout-title">
 
         <div class="ai-project-body">
 
-            <h3 id="answerbase-title">
-                Answerbase — Embeddable AI Support Platform
+            <div class="project-type">Python • Data Engineering • Automation</div>
+            <h3 id="job-scout-title">
+                JobScout — Job Discovery &amp; Intelligence
             </h3>
 
             <p class="ai-project-description">
-
-                Full-stack SaaS MVP that turns company documents
-                into a grounded AI support chatbot.
-
-                Users can upload company knowledge,
-                process documents into vector embeddings,
-                query them through semantic search and RAG,
-                receive source-grounded answers,
-                and embed the chatbot on external websites.
-
+                A multi-source platform that collects, normalizes, deduplicates,
+                and classifies vacancies from heterogeneous ATS platforms and
+                job boards. It creates a provenance-aware pipeline without hiding
+                uncertain data behind an opaque score.
             </p>
 
             <p class="ai-project-description">
-
-                Built end-to-end including authentication,
-                database architecture,
-                private document storage,
-                document processing,
-                vector search,
-                AI answer generation,
-                public widget integration,
-                pricing tiers,
-                feature gating,
-                deployment,
-                and production debugging.
-
+                The implemented pipeline integrates Greenhouse, Lever, Ashby,
+                Recruitee, AgileFluent, and hh.ru; isolates provider failures;
+                preserves source observations; and applies an explainable,
+                versioned ruleset that classifies iOS roles as matches,
+                possible matches, or rejections.
             </p>
 
             <p class="ai-project-stack">
-
-                Next.js • TypeScript • Supabase Auth • PostgreSQL •
-                pgvector • RLS • Supabase Storage •
-                OpenAI Embeddings • RAG • Server Actions • Vercel
-
+                Python 3.12+ • asyncio • httpx • SQLAlchemy 2 •
+                SQLite • Alembic • Pydantic 2 • Telethon • pytest
             </p>
-
-            <a class="answerbase-visual" href="answerbase-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Answerbase screenshot (opens in a new tab)">
-                <img src="answerbase-dashboard.png" width="3420" height="2146" loading="lazy" alt="Answerbase AI product dashboard">
-            </a>
 
         </div>
 
@@ -991,20 +884,11 @@ footer {
 
             <a
                 class="ai-link"
-                href="https://answerbase-drab.vercel.app"
+                href="https://github.com/KlinovK/job-scout"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Live Demo
-            </a>
-
-            <a
-                class="ai-link secondary"
-                href="https://github.com/KlinovK/answerbase"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
+                View on GitHub
             </a>
 
         </div>
