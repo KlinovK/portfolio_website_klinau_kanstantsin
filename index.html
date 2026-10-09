@@ -150,6 +150,17 @@ p {
     font-weight: 700;
 }
 
+.about-copy p + p {
+    margin-top: 20px;
+}
+
+.about-key-areas {
+    margin-top: 10px;
+    padding-left: 22px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.65;
+}
+
 /* SKILLS */
 
 .skill-group {
@@ -528,6 +539,11 @@ a:hover {
 .experience-date {
     opacity: 0.7;
     margin-top: 4px;
+}
+
+.experience-company {
+    margin-top: 4px;
+    color: rgba(255,255,255,0.9);
 }
 
 .experience-block {
@@ -946,35 +962,48 @@ footer {
         About Me
     </h2>
 
-    <div class="card">
+    <div class="card about-copy">
 
-        I am a
-        <span class="about-highlight">
-            Senior iOS Engineer with 7+ years of commercial experience
-        </span>
-        building secure, scalable mobile products across
-        FinTech, Web3, and logistics.
+        <p>
+            <span class="about-highlight">Senior iOS Engineer with 7+ years of experience</span>
+            building and shipping production mobile applications across FinTech,
+            Web3, and logistics.
+        </p>
 
-        <br><br>
+        <p>
+            I work across the full product lifecycle — from architecture and technical
+            decisions to implementation, performance optimization, release, and App Store
+            delivery. I have experience owning iOS development across multiple products
+            and collaborating closely with product, backend, design, and QA teams.
+        </p>
 
-        My core expertise includes
-        Swift, SwiftUI, UIKit, Swift Concurrency,
-        modular architecture, real-time systems,
-        secure mobile flows, performance optimization,
-        and production delivery.
+        <p>Key areas:</p>
+        <ul class="about-key-areas">
+            <li>Swift, SwiftUI, and UIKit</li>
+            <li>Swift Concurrency and multithreading</li>
+            <li>MVVM, TCA, and modular architecture</li>
+            <li>REST APIs, WebSockets, and real-time systems</li>
+            <li>Core Data, SwiftData, and Keychain</li>
+            <li>Performance optimization</li>
+            <li>FinTech, payments, crypto wallets, and Web3 integrations</li>
+            <li>CI/CD and App Store delivery</li>
+        </ul>
 
-        <br><br>
+        <p>
+            I also use AI-assisted development tools such as ChatGPT, Codex, Claude Code,
+            Cursor, and GitHub Copilot in my daily engineering workflow, and I am expanding
+            my experience with Python and AI/LLM applications.
+        </p>
 
-        Alongside iOS engineering,
-        I build AI-enabled products using LLM APIs,
-        RAG, vector search, structured data flows,
-        and modern cloud infrastructure.
+        <p>
+            I am open to Senior and strong Middle+ iOS Engineer opportunities, particularly
+            in product companies working on FinTech, Web3, AI-enabled products, developer
+            tools, or technically challenging mobile applications.
+        </p>
 
-        I also use coding agents such as
-        Codex, Claude Code, ChatGPT, and Cursor
-        for implementation, refactoring, debugging,
-        testing, documentation, and code review —
-        with engineering validation of generated output.
+        <p>
+            Open to remote international roles, contractor opportunities, and relocation.
+        </p>
 
     </div>
 
@@ -1054,192 +1083,123 @@ footer {
 
     <div class="card">
 
-        <h3>
-            Senior iOS Developer — Contractor
-        </h3>
-
-        <p class="experience-date">
-            May 2025 – August 2026 • Remote
-        </p>
+        <h3>Senior iOS Engineer</h3>
+        <p class="experience-company">Self-employed • Freelance</p>
+        <p class="experience-date">Jan 2025 – Aug 2026 • Barysaw • Remote</p>
 
         <div class="experience-block">
-
             <p>
-                I worked on production iOS features across FinTech and logistics products,
-                taking engineering tasks from requirements and technical design
-                through implementation, testing, release, and post-release improvements.
+                Built production-grade iOS applications and independent mobile projects
+                using Swift, SwiftUI, UIKit, and modern Swift Concurrency.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    Engineering & Architecture
-                </strong><br>
-
-                • Built production features using SwiftUI and UIKit<br>
-
-                • Designed modular, maintainable application components<br>
-
-                • Implemented concurrency-safe async/await workflows<br>
-
-                • Integrated REST APIs, authentication flows,
-                asynchronous data pipelines, and third-party services
-
+                Worked across the full product lifecycle: architecture and technical design,
+                feature implementation, REST API integration, performance optimization,
+                testing, CI/CD, and App Store delivery.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    Product Ownership
-                </strong><br>
-
-                • Collaborated with Product, Design, Backend, and QA<br>
-
-                • Participated in requirement refinement,
-                technical trade-offs, estimates, and implementation planning<br>
-
-                • Supported features through production release
-                and subsequent iterations
-
+                Current engineering focus includes Swift 6, Structured Concurrency, SwiftUI,
+                modular architecture, TCA, SwiftData, and AI-assisted development. Established
+                the product specification, architecture documentation, engineering protocol,
+                and quality standards for the newly scoped Crypto Portfolio Advisor; application
+                implementation is planned.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    AI-Assisted Engineering
-                </strong><br>
-
-                • Used coding agents for implementation,
-                refactoring, debugging, testing, and documentation<br>
-
-                • Validated AI-generated changes through tests,
-                code review, and manual engineering analysis
-
+                Applied product ownership and cross-functional experience from FinTech and Web3
+                to architecture decisions and implementation. Regularly used code reviews,
+                automated testing, Git workflows, and AI engineering tools including Codex and
+                Claude Code.
             </p>
-
         </div>
 
     </div>
 
     <div class="card">
 
-        <h3>
-            Senior iOS Developer — Ultra Stellar
-        </h3>
-
-        <p class="experience-date">
-            Mar 2019 – Dec 2024 • Remote
-        </p>
+        <h3>iOS Developer</h3>
+        <p class="experience-company">Ultra Stellar • Full-time</p>
+        <p class="experience-date">Mar 2019 – Dec 2024 • Minsk, Belarus • Remote</p>
 
         <div class="experience-block">
-
             <p>
-                I worked on production FinTech, Web3,
-                and real-time mobile products including
-                LOBSTR Wallet, CoinDisco, and logistics systems.
+                Worked as the primary iOS engineer across multiple production products in
+                FinTech, Web3, and logistics, taking ownership of features from technical
+                design through implementation, debugging, optimization, and release.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    System Ownership & Architecture
-                </strong><br>
-
-                • Designed and evolved modular iOS architectures
-                using MVVM-C, VIPER, and TCA-inspired approaches<br>
-
-                • Refactored legacy code into more testable
-                and maintainable components<br>
-
-                • Applied SOLID principles,
-                dependency injection,
-                and protocol-based abstractions
-
+                Built and evolved a secure Web3 payment application using Swift, UIKit,
+                RxSwift, REST APIs, and third-party SDKs, including wallet and
+                transaction-related functionality.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    Web3 & FinTech
-                </strong><br>
-
-                • Built secure crypto wallet and payment flows<br>
-
-                • Integrated blockchain SDKs,
-                financial APIs,
-                asset management,
-                and transaction flows<br>
-
-                • Implemented security-sensitive application logic
-                using Keychain and secure storage
-
+                Modernized a logistics application by introducing SwiftUI and improving
+                architecture, maintainability, and user experience while continuing to
+                support the existing UIKit codebase.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    Real-Time & Networking
-                </strong><br>
-
-                • Implemented REST and WebSocket communication layers<br>
-
-                • Built state synchronization
-                and real-time data pipelines<br>
-
-                • Developed background processing,
-                push notifications,
-                and production synchronization flows
-
+                Introduced modern Swift Concurrency into production code, improving
+                asynchronous workflows and simplifying complex state and data flows.
             </p>
-
         </div>
 
         <div class="experience-block">
-
             <p>
-
-                <strong>
-                    Reliability & Delivery
-                </strong><br>
-
-                • Investigated crashes and production issues
-                using Crashlytics and Instruments<br>
-
-                • Improved application stability
-                and performance-critical flows<br>
-
-                • Worked with CI/CD,
-                automated builds,
-                signing,
-                TestFlight,
-                and App Store releases
-
+                Worked closely with product, backend, design, and QA teams on architecture
+                decisions, API integration, code reviews, production issues, and App Store
+                delivery. Focused on maintainable architecture, performance, reliability,
+                and incremental modernization of long-lived production codebases.
             </p>
+        </div>
 
+    </div>
+
+    <div class="card">
+
+        <h3>Project Manager / QA</h3>
+        <p class="experience-company">Transinet GmbH • Full-time</p>
+        <p class="experience-date">Mar 2015 – Mar 2019 • Minsk, Belarus • On-site</p>
+
+        <div class="experience-block">
+            <p>
+                Managed software projects from planning through delivery, coordinating
+                clients, developers, designers, and other stakeholders across the
+                development lifecycle.
+            </p>
+        </div>
+
+        <div class="experience-block">
+            <p>
+                Combined project management with hands-on QA for web and mobile products,
+                including functional, regression, and UI/UX testing, bug investigation,
+                and release validation.
+            </p>
+        </div>
+
+        <div class="experience-block">
+            <p>
+                Worked closely with engineering teams on requirements, prioritization,
+                sprint planning, issue resolution, and delivery processes—building the
+                product and cross-functional experience that later supported my transition
+                into iOS engineering.
+            </p>
         </div>
 
     </div>
