@@ -451,18 +451,21 @@ a:hover {
     box-shadow: 0 10px 30px rgba(0,245,255,0.12);
 }
 
-/* CRYPTO PORTFOLIO ADVISOR CASE STUDY */
+/* CRYPTO CASE STUDIES */
 
-#crypto-portfolio-advisor {
+#crypto-portfolio-advisor,
+#ethereum-wallet-intelligence {
     scroll-margin-top: 24px;
 }
 
-#crypto-portfolio-advisor .crypto-subtitle {
+#crypto-portfolio-advisor .crypto-subtitle,
+#ethereum-wallet-intelligence .crypto-subtitle {
     color: #00f5ff;
     margin-bottom: 18px;
 }
 
-#crypto-portfolio-advisor .crypto-title-row {
+#crypto-portfolio-advisor .crypto-title-row,
+#ethereum-wallet-intelligence .crypto-title-row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -470,11 +473,13 @@ a:hover {
     margin-bottom: 10px;
 }
 
-#crypto-portfolio-advisor .crypto-title-row h3 {
+#crypto-portfolio-advisor .crypto-title-row h3,
+#ethereum-wallet-intelligence .crypto-title-row h3 {
     margin-bottom: 0;
 }
 
-#crypto-portfolio-advisor .crypto-status {
+#crypto-portfolio-advisor .crypto-status,
+#ethereum-wallet-intelligence .crypto-status {
     display: inline-flex;
     padding: 4px 9px;
     border: 1px solid rgba(0,245,255,0.28);
@@ -486,50 +491,60 @@ a:hover {
     text-transform: uppercase;
 }
 
-#crypto-portfolio-advisor h4 {
+#crypto-portfolio-advisor h4,
+#ethereum-wallet-intelligence h4 {
     margin-bottom: 12px;
     font-size: 1rem;
 }
 
-#crypto-portfolio-advisor .crypto-highlights {
+#crypto-portfolio-advisor .crypto-highlights,
+#ethereum-wallet-intelligence .crypto-highlights {
     padding-left: 20px;
     margin-bottom: 20px;
     color: rgba(255,255,255,0.75);
     line-height: 1.65;
 }
 
-#crypto-portfolio-advisor .crypto-highlights li + li {
+#crypto-portfolio-advisor .crypto-highlights li + li,
+#ethereum-wallet-intelligence .crypto-highlights li + li {
     margin-top: 10px;
 }
 
-#crypto-portfolio-advisor .crypto-highlights strong {
+#crypto-portfolio-advisor .crypto-highlights strong,
+#ethereum-wallet-intelligence .crypto-highlights strong {
     color: white;
 }
 
-#crypto-portfolio-advisor .crypto-engineering {
+#crypto-portfolio-advisor .crypto-engineering,
+#ethereum-wallet-intelligence .crypto-engineering {
     margin-bottom: 18px;
 }
 
-#crypto-portfolio-advisor summary {
+#crypto-portfolio-advisor summary,
+#ethereum-wallet-intelligence summary {
     cursor: pointer;
     color: #00f5ff;
     padding-block: 8px;
 }
 
-#crypto-portfolio-advisor summary h4 {
+#crypto-portfolio-advisor summary h4,
+#ethereum-wallet-intelligence summary h4 {
     display: inline;
 }
 
-#crypto-portfolio-advisor .crypto-engineering[open] summary {
+#crypto-portfolio-advisor .crypto-engineering[open] summary,
+#ethereum-wallet-intelligence .crypto-engineering[open] summary {
     margin-bottom: 12px;
 }
 
-#crypto-portfolio-advisor .crypto-scope h4:not(:first-child) {
+#crypto-portfolio-advisor .crypto-scope h4:not(:first-child),
+#ethereum-wallet-intelligence .crypto-scope h4:not(:first-child) {
     margin-top: 20px;
 }
 
 .ai-project a:focus-visible,
-#crypto-portfolio-advisor summary:focus-visible {
+#crypto-portfolio-advisor summary:focus-visible,
+#ethereum-wallet-intelligence summary:focus-visible {
     outline: 2px solid #00f5ff;
     outline-offset: 4px;
 }
@@ -900,6 +915,60 @@ footer {
 
         <div class="ai-links">
             <a class="ai-link" href="https://github.com/KlinovK/crypto-portfolio-advisor" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+
+    </article>
+
+    <article class="card ai-project" id="ethereum-wallet-intelligence" aria-labelledby="ethereum-wallet-intelligence-title">
+
+        <div class="ai-project-body">
+
+            <div class="project-type">Web3 • AI • Full-Stack Engineering</div>
+            <div class="crypto-title-row">
+                <h3 id="ethereum-wallet-intelligence-title">Ethereum Wallet Intelligence</h3>
+                <span class="crypto-status">In Development</span>
+            </div>
+            <p class="crypto-subtitle">AI-Powered Web3 Analytics Platform</p>
+
+            <p class="ai-project-description">
+                An AI-assisted full-stack Web3 product in development. Its implemented
+                foundation includes a Python and FastAPI backend, Ethereum JSON-RPC
+                integration, and asynchronous PostgreSQL persistence for blocks and
+                transactions. Wallet indexing workflows, analytics, AI insights, and
+                client applications remain planned.
+            </p>
+
+            <p class="ai-project-description">
+                Codex supports implementation within a human-led engineering workflow:
+                architecture and technical decisions remain human-owned, while changes
+                undergo code review, automated testing, and engineering validation.
+            </p>
+
+            <details class="crypto-engineering">
+                <summary><h4>Current &amp; planned scope</h4></summary>
+                <div class="crypto-scope">
+                    <h4>Implemented</h4>
+                    <ul class="crypto-highlights">
+                        <li>Python 3.13 and FastAPI backend foundation with a health endpoint</li>
+                        <li>Asynchronous Ethereum JSON-RPC integration using Web3.py</li>
+                        <li>PostgreSQL persistence for blocks and transactions using SQLAlchemy and Alembic</li>
+                        <li>Clean Architecture boundaries with automated unit and database integration tests</li>
+                    </ul>
+
+                    <h4>Planned</h4>
+                    <ul class="crypto-highlights">
+                        <li>Ethereum wallet indexing and on-chain activity normalization</li>
+                        <li>Portfolio, transaction, token, DeFi, and profit-and-loss analytics</li>
+                        <li>AI-powered wallet analytics</li>
+                        <li>Native iOS and Android applications</li>
+                    </ul>
+                </div>
+            </details>
+
+        </div>
+
+        <div class="ai-links">
+            <a class="ai-link" href="https://github.com/KlinovK/ethereum-wallet-intelligence" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
 
     </article>
