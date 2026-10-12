@@ -290,6 +290,20 @@ a:hover {
     transform: scale(1.04);
 }
 
+.project-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    height: 100%;
+    gap: 2px;
+    background: #05060a;
+}
+
+.project-image-gallery .project-image {
+    min-width: 0;
+    object-position: top center;
+}
+
 .project-image-fallback {
     width: 100%;
     height: 100%;
@@ -358,6 +372,25 @@ a:hover {
     line-height: 1.5;
     min-height: 42px;
     margin-bottom: 18px;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 6px;
+    min-height: 42px;
+    margin-bottom: 18px;
+}
+
+.project-technology {
+    padding: 5px 8px;
+    border: 1px solid rgba(0,245,255,0.26);
+    border-radius: 999px;
+    background: rgba(0,245,255,0.08);
+    color: #00f5ff;
+    font-size: 0.72rem;
+    line-height: 1.2;
 }
 
 .project-view {
@@ -627,6 +660,23 @@ a:hover {
     height: 100%;
     object-fit: contain;
     display: block;
+}
+
+.modal-image-secondary {
+    display: none;
+}
+
+.modal-image-container.multiple-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 12px;
+}
+
+.modal-image-container.multiple-images .modal-image {
+    min-width: 0;
+    object-fit: contain;
+    border-radius: 12px;
 }
 
 .modal-image-fallback {
@@ -1439,6 +1489,13 @@ footer {
                 alt=""
             >
 
+            <img
+                id="modalImageSecondary"
+                class="modal-image modal-image-secondary"
+                src=""
+                alt=""
+            >
+
             <div
                 id="modalImageFallback"
                 class="modal-image-fallback"
@@ -1477,6 +1534,46 @@ footer {
    ====================================================== */
 
 const productionProjects = [
+
+    {
+        id: "realtime-tracker",
+        type: "Native iOS Application",
+        title: "Realtime Price Tracker",
+        shortTitle: "Realtime Price Tracker",
+        images: [
+            "realtime-price-tracker-demo1.png",
+            "realtime-price-tracker-demo2.png"
+        ],
+
+        shortDescription:
+            "Real-time crypto markets, favorites, offline data, and interactive charts.",
+
+        description:
+            "A functional native iOS cryptocurrency market tracking application with a CoinGecko " +
+            "Top 100 overview, real-time Binance WebSocket price updates, favorite tracking, " +
+            "offline SwiftData persistence, and interactive seven-day price charts. It handles " +
+            "loading, error, retry, reconnect, and cancellation-aware asynchronous states through " +
+            "a custom reducer-based unidirectional data-flow architecture inspired by The " +
+            "Composable Architecture.",
+
+        technologies: [
+            "Swift 6",
+            "SwiftUI",
+            "Swift Concurrency",
+            "SwiftData",
+            "Swift Charts",
+            "WebSockets"
+        ],
+
+        stack:
+            "Swift 6 • SwiftUI • Swift Concurrency • Actors • SwiftData • Swift Charts • " +
+            "URLSession • WebSockets • Dependency Injection • XCTest",
+
+        github:
+            "https://github.com/KlinovK/realtime-price-tracker",
+
+        liveDemo: ""
+    },
 
     {
         id: "radaro",
@@ -1560,32 +1657,6 @@ const productionProjects = [
    ====================================================== */
 
 const petProjects = [
-
-    {
-        id: "realtime-tracker",
-        type: "Engineering Experiment • Web3",
-        title: "Realtime Price Tracker",
-        shortTitle: "Realtime Tracker",
-        image: "realtime-tracker-1.png",
-
-        shortDescription:
-            "Real-time cryptocurrency market tracking with WebSockets and Swift Concurrency.",
-
-        description:
-            "Production-grade iOS cryptocurrency market tracker focused on real-time data delivery, " +
-            "WebSocket streaming, Swift Concurrency, state management, and responsive UI updates. " +
-            "Built to demonstrate architecture and engineering patterns used in real-time FinTech " +
-            "and Web3 applications, including async data flows, cancellation, state synchronization, " +
-            "and scalable SwiftUI composition.",
-
-        stack:
-            "SwiftUI • WebSockets • Swift Concurrency • async/await • TCA-inspired Architecture",
-
-        github:
-            "https://github.com/KlinovK/crypto-tracker",
-
-        liveDemo: ""
-    },
 
     {
         id: "top-pizza",
@@ -1775,6 +1846,12 @@ const modal =
 const modalImage =
     document.getElementById("modalImage");
 
+const modalImageSecondary =
+    document.getElementById("modalImageSecondary");
+
+const modalImageContainer =
+    document.querySelector(".modal-image-container");
+
 const modalImageFallback =
     document.getElementById("modalImageFallback");
 
@@ -1807,7 +1884,12 @@ function createProjectCards(
     }
 
     track.innerHTML =
-        projects.map(project => `
+        projects.map(project => {
+
+            const projectImages =
+                getProjectImages(project);
+
+            return `
 
             <article
                 class="project-card"
@@ -1821,12 +1903,31 @@ function createProjectCards(
                 <div class="project-image-container">
 
                     ${
-                        project.image
+                        projectImages.length > 1
+                            ? `
+
+                                <div class="project-image-gallery">
+                                    ${projectImages.map((image, index) => `
+                                        <img
+                                            class="project-image"
+                                            src="${escapeHTML(image)}"
+                                            alt="${escapeHTML(project.shortTitle)} screenshot ${index + 1} of ${projectImages.length}"
+                                            onerror="showGalleryImageFallback(this)"
+                                        >
+                                    `).join("")}
+                                </div>
+
+                                <div class="project-image-fallback">
+                                    ${escapeHTML(project.shortTitle)}
+                                </div>
+
+                            `
+                            : projectImages.length === 1
                             ? `
 
                                 <img
                                     class="project-image"
-                                    src="${escapeHTML(project.image)}"
+                                    src="${escapeHTML(projectImages[0])}"
                                     alt="${escapeHTML(project.shortTitle)} screenshot"
                                     onerror="showCardFallback(this)"
                                 >
@@ -1877,9 +1978,23 @@ function createProjectCards(
                         ${escapeHTML(project.shortDescription)}
                     </p>
 
-                    <p class="project-stack">
-                        ${escapeHTML(project.stack)}
-                    </p>
+                    ${
+                        project.technologies
+                            ? `
+                                <div class="project-technologies" aria-label="Technologies">
+                                    ${project.technologies.map(technology => `
+                                        <span class="project-technology">
+                                            ${escapeHTML(technology)}
+                                        </span>
+                                    `).join("")}
+                                </div>
+                            `
+                            : `
+                                <p class="project-stack">
+                                    ${escapeHTML(project.stack)}
+                                </p>
+                            `
+                    }
 
                     <div class="project-view">
 
@@ -1897,7 +2012,9 @@ function createProjectCards(
 
             </article>
 
-        `).join("");
+        `;
+
+        }).join("");
 
 }
 
@@ -1915,6 +2032,20 @@ function escapeHTML(value) {
         .replaceAll("'", "&#039;");
 }
 
+function getProjectImages(project) {
+
+    if (
+        Array.isArray(project.images) &&
+        project.images.length > 0
+    ) {
+        return project.images;
+    }
+
+    return project.image
+        ? [project.image]
+        : [];
+}
+
 function showCardFallback(image) {
 
     image.style.display =
@@ -1927,6 +2058,60 @@ function showCardFallback(image) {
         fallback.style.display =
             "flex";
     }
+
+}
+
+function showGalleryImageFallback(image) {
+
+    image.style.display =
+        "none";
+
+    const gallery =
+        image.parentElement;
+
+    const hasVisibleImage =
+        [...gallery.querySelectorAll("img")]
+            .some(item => item.style.display !== "none");
+
+    if (!hasVisibleImage) {
+        gallery.style.display =
+            "none";
+
+        const fallback =
+            gallery.nextElementSibling;
+
+        if (fallback) {
+            fallback.style.display =
+                "flex";
+        }
+    }
+
+}
+
+function showModalImageFallback(
+    image,
+    projectTitle
+) {
+
+    image.style.display =
+        "none";
+
+    const hasVisibleImage =
+        [modalImage, modalImageSecondary]
+            .some(item => item.style.display !== "none");
+
+    if (hasVisibleImage) {
+        modalImageContainer.classList.remove(
+            "multiple-images"
+        );
+        return;
+    }
+
+    modalImageFallback.textContent =
+        projectTitle;
+
+    modalImageFallback.style.display =
+        "flex";
 
 }
 
@@ -1955,33 +2140,68 @@ function openProject(projectId) {
     modalStack.textContent =
         project.stack;
 
-    if (project.image) {
+    const projectImages =
+        getProjectImages(project);
+
+    modalImageContainer.classList.toggle(
+        "multiple-images",
+        projectImages.length > 1
+    );
+
+    modalImageFallback.style.display =
+        "none";
+
+    if (projectImages.length > 0) {
 
         modalImage.style.display =
             "block";
 
-        modalImageFallback.style.display =
-            "none";
-
         modalImage.src =
-            project.image;
+            projectImages[0];
 
         modalImage.alt =
-            `${project.shortTitle} project preview`;
+            `${project.shortTitle} screenshot 1 of ${projectImages.length}`;
 
         modalImage.onerror =
             function() {
-
-                modalImage.style.display =
-                    "none";
-
-                modalImageFallback.textContent =
-                    project.shortTitle;
-
-                modalImageFallback.style.display =
-                    "flex";
-
+                showModalImageFallback(
+                    modalImage,
+                    project.shortTitle
+                );
             };
+
+        if (projectImages.length > 1) {
+
+            modalImageSecondary.style.display =
+                "block";
+
+            modalImageSecondary.src =
+                projectImages[1];
+
+            modalImageSecondary.alt =
+                `${project.shortTitle} screenshot 2 of ${projectImages.length}`;
+
+            modalImageSecondary.onerror =
+                function() {
+                    showModalImageFallback(
+                        modalImageSecondary,
+                        project.shortTitle
+                    );
+                };
+
+        } else {
+
+            modalImageSecondary.removeAttribute(
+                "src"
+            );
+
+            modalImageSecondary.style.display =
+                "none";
+
+            modalImageSecondary.alt =
+                "";
+
+        }
 
     } else {
 
@@ -1991,6 +2211,19 @@ function openProject(projectId) {
 
         modalImage.style.display =
             "none";
+
+        modalImage.alt =
+            "";
+
+        modalImageSecondary.removeAttribute(
+            "src"
+        );
+
+        modalImageSecondary.style.display =
+            "none";
+
+        modalImageSecondary.alt =
+            "";
 
         modalImageFallback.textContent =
             project.shortTitle;
